@@ -504,3 +504,26 @@
 2020-07-24 12:11:19,768 INFO client Устанавливаем соединение: ('localhost', 7777)
 2020-07-24 12:11:19,768 INFO client Программа клиент запущена
 2020-07-24 12:11:19,768 INFO client Устанавливаем соединение: ('localhost', 7777)
+2020-07-24 13:24:31,575 INFO client Программа клиент запущена
+2020-07-24 13:24:31,575 INFO client Устанавливаем соединение: ('localhost', 7777)
+2020-07-24 13:24:31,575 INFO client Программа клиент запущена
+2020-07-24 13:24:31,575 INFO client Устанавливаем соединение: ('localhost', 7777)
+2020-07-24 13:24:39,716 INFO client Выполняем команду: `presence`
+2020-07-24 13:24:39,809 INFO client Сообщение от сервера: command `presence` completed successfully; Code: 200
+2020-07-24 13:24:48,934 INFO client Выполняем команду: `broadcast`
+2020-07-24 13:24:48,950 INFO client Сообщение от сервера: command `broadcast` completed successfully; Code: 200
+2020-07-24 14:37:13,283 INFO client Программа клиент запущена
+2020-07-24 14:37:25,986 ERROR client create_parser() missing 1 required positional argument: 'self'
+2020-07-24 14:37:34,142 INFO client Программа клиент запущена
+2020-07-24 14:37:41,955 ERROR client create_parser() missing 1 required positional argument: 'self'
+2020-07-24 14:38:15,799 INFO client Программа клиент запущена
+2020-07-24 14:38:58,939 INFO client Устанавливаем соединение: ('localhost', 7777)
+2020-07-24 14:39:27,325 INFO client Программа клиент запущена
+2020-07-24 14:39:27,325 INFO client Устанавливаем соединение: ('localhost', 7777)
+2020-07-24 14:39:27,341 INFO client Программа клиент запущена
+2020-07-24 14:39:27,341 INFO client Устанавливаем соединение: ('localhost', 7777)
+2020-07-24 14:39:35,247 INFO client Выполняем команду: `presence`
+2020-07-24 14:39:35,372 INFO client Сообщение от сервера: command `presence` completed successfully; Code: 200
+2020-07-24 14:39:48,888 INFO client Выполняем команду: `broadcast`
+2020-07-24 14:39:48,982 INFO client Сообщение от сервера: command `broadcast` completed successfully; Code: 200
+2020-07-24 14:39:48,982 INFO client Сообщение от сервера: command `broadcast` completed successfully; Code: 200
