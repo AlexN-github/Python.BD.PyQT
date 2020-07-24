@@ -11,6 +11,7 @@ import logging
 
 def create_parser():
     parser = argparse.ArgumentParser()
+    parser.add_argument('-n', '--name', default='')
     parser.add_argument('-a', '--addr', default='localhost')
     parser.add_argument('-p', '--port', default=str(default_port))
 
@@ -106,6 +107,8 @@ logger = logging.getLogger('app.client')
 logger.info('Программа клиент запущена')
 parser = create_parser()
 namespace = parser.parse_args(sys.argv[1:])
+client_name = namespace.name
+print(client_name)
 addr = namespace.addr  # 'localhost'
 port = int(namespace.port)
 account_name = 'Alex'
