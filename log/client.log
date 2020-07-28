@@ -527,3 +527,13 @@
 2020-07-24 14:39:48,888 INFO client Выполняем команду: `broadcast`
 2020-07-24 14:39:48,982 INFO client Сообщение от сервера: command `broadcast` completed successfully; Code: 200
 2020-07-24 14:39:48,982 INFO client Сообщение от сервера: command `broadcast` completed successfully; Code: 200
+2020-07-28 14:52:21,827 INFO client Программа клиент запущена
+2020-07-28 14:52:21,827 INFO client Устанавливаем соединение: ('localhost', 7777)
+2020-07-28 15:18:17,271 INFO client Программа клиент запущена
+2020-07-28 15:18:17,271 INFO client Устанавливаем соединение: ('localhost', 7777)
+2020-07-28 15:18:17,271 INFO client Программа клиент запущена
+2020-07-28 15:18:17,271 INFO client Устанавливаем соединение: ('localhost', 7777)
+2020-07-28 15:28:36,409 INFO client Программа клиент запущена
+2020-07-28 15:28:36,409 INFO client Устанавливаем соединение: ('localhost', 7777)
+2020-07-28 15:29:17,727 INFO client Выполняем команду: `presence`
+2020-07-28 15:29:45,743 INFO client Сообщение от сервера: command `presence` completed successfully; Code: 200

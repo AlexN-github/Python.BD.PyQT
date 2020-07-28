@@ -11,7 +11,7 @@ import logging
 
 def create_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-n', '--name', default='')
+    parser.add_argument('-n', '--name', default='user_Vasya')
     parser.add_argument('-a', '--addr', default='localhost')
     parser.add_argument('-p', '--port', default=str(default_port))
     return parser

@@ -2,6 +2,7 @@
 import logging
 import select
 
+import threading
 import log.server_log_config
 import argparse
 import json
@@ -9,6 +10,7 @@ from socket import *
 import sys
 
 from common.variables import *
+from server_database import ServerStorage
 
 def create_parser():
     parser = argparse.ArgumentParser()
@@ -19,8 +21,11 @@ def create_parser():
 
 
 # Основной класс сервера
-class Server:
-    def __init__(self, listen_address, listen_port):
+class Server(threading.Thread):
+    def __init__(self, listen_address, listen_port, database):
+
+        # База данных сервера
+        self.database = database
 
         # Параментры подключения
         self.addr = listen_address
@@ -32,8 +37,15 @@ class Server:
         #Очередь запросов на обработку
         self.request_queue = {}
 
+        # Конструктор предка
+        super().__init__()
+
+
     def execute_command_presence(self, client, command):
         result = {}
+        client_ip, client_port = client.getpeername()
+        #Пишем в БД информацию о логине
+        self.database.user_login(command['account_name'], client_ip, client_port)
         result['msg'] = 'command `{0}` completed successfully'.format(command['action'])
         result['code'] = 200
         self.sending_responde(client, result)
@@ -111,7 +123,7 @@ class Server:
             self.processing_command(request)
             self.request_queue.pop(request, None)
 
-    def mainloop(self):
+    def run(self):
         s = socket(AF_INET, SOCK_STREAM)  # Создает сокет TCP
         s.bind((self.addr, self.port))  # Присваивает порт 8888
         s.listen(5)  # Переходит в режим ожидания запросов;
@@ -153,6 +165,15 @@ class Server:
                     logger.error('Ошибка обработки запроса клиента {0}: {1}'.format(conn, result['msg']))
 
 
+def print_help():
+    print('Поддерживаемые комманды:')
+    print('users - список известных пользователей')
+    print('connected - список подключенных пользователей')
+    print('loghist - история входов пользователя')
+    print('exit - завершение работы сервера.')
+    print('help - вывод справки по поддерживаемым командам')
+
+
 def main():
 
     # Загрузка параметров командной строки, если нет параметров, то задаём значения по умоланию.
@@ -160,9 +181,38 @@ def main():
     namespace = parser.parse_args(sys.argv[1:])
     #listen_address, listen_port = namespace.addr, namespace['port']
 
+    # Инициализация базы данных
+    database = ServerStorage()
+
     # Создание экземпляра класса - сервера.
-    server = Server(namespace.addr, namespace.port)
-    server.mainloop()
+    server = Server(namespace.addr, namespace.port, database)
+    server.daemon = True
+    server.start()
+    #server.mainloop()
+
+    # Печатаем справку:
+    print_help()
+
+    # Основной цикл сервера:
+    while True:
+        command = input('Введите комманду: ')
+        if command == 'help':
+            print_help()
+        elif command == 'exit':
+            break
+        elif command == 'users':
+            for user in sorted(database.users_list()):
+                print(f'Пользователь {user[0]}, последний вход: {user[1]}')
+        elif command == 'connected':
+            for user in sorted(database.active_users_list()):
+                print(f'Пользователь {user[0]}, подключен: {user[1]}:{user[2]}, время установки соединения: {user[3]}')
+        elif command == 'loghist':
+            name = input('Введите имя пользователя для просмотра истории. Для вывода всей истории, просто нажмите Enter: ')
+            for user in sorted(database.login_history(name)):
+                print(f'Пользователь: {user[0]} время входа: {user[1]}. Вход с: {user[2]}:{user[3]}')
+        else:
+            print('Команда не распознана.')
+
 
 
 

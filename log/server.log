@@ -1,140 +1,37 @@
-2020-07-24 11:21:22,391 INFO server Программа сервер запущена
-2020-07-24 11:21:22,391 INFO server Слушаем запросы от клиентов: ('', 7777)
-2020-07-24 11:22:08,173 INFO server Программа сервер запущена
-2020-07-24 11:22:08,173 INFO server Слушаем запросы от клиентов: ('', 7777)
-2020-07-24 11:28:19,245 INFO server Программа сервер запущена
-2020-07-24 11:28:19,260 INFO server Слушаем запросы от клиентов: ('', 7777)
-2020-07-24 11:29:18,135 INFO server Программа сервер запущена
-2020-07-24 11:29:18,135 INFO server Слушаем запросы от клиентов: ('', 7777)
-2020-07-24 11:53:41,126 INFO server Программа сервер запущена
-2020-07-24 11:53:41,126 INFO server Слушаем запросы от клиентов: ('', 7777)
-2020-07-24 11:53:58,930 INFO server Получен запрос на соединение от ('127.0.0.1', 51791)
-2020-07-24 11:54:22,086 INFO server Возвращаем клиенту ('127.0.0.1', 51791) msg: Unexpected error; code: 500
-2020-07-24 11:54:22,086 ERROR server Ошибка обработки запроса клиента <socket.socket fd=432, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 51791)>: Unexpected error
-2020-07-24 11:54:22,289 INFO server Клиент 432 ('127.0.0.1', 51791) отключился
-2020-07-24 11:54:22,289 INFO server Возвращаем клиенту ('127.0.0.1', 51791) msg: Unexpected error; code: 500
-2020-07-24 11:54:22,289 ERROR server [WinError 10053] Программа на вашем хост-компьютере разорвала установленное подключение
-2020-07-24 11:55:56,644 INFO server Программа сервер запущена
-2020-07-24 11:55:56,644 INFO server Слушаем запросы от клиентов: ('', 7777)
-2020-07-24 11:55:57,159 INFO server Получен запрос на соединение от ('127.0.0.1', 51797)
-2020-07-24 11:55:57,159 INFO server Получен запрос на соединение от ('127.0.0.1', 51798)
-2020-07-24 11:56:34,534 DEBUG server Принято сообщение: {"action": "presence", "time": 1595580994, "type": "status", "user": {"account_name": "Alex", "status": "Yep, I am here!"}, "account_name": "Alex"}, от клиента: 
-2020-07-24 11:56:34,534 INFO server Принята команда: presence
-2020-07-24 11:56:34,534 INFO server Возвращаем клиенту ('127.0.0.1', 51798) msg: command `presence` completed successfully; code: 200
-2020-07-24 11:56:40,831 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1595581000, "type": "status", "user": {"account_name": "Alex", "status": "Yep, I am here!"}, "account_name": "Alex"}, от клиента: 
-2020-07-24 11:56:40,831 INFO server Принята команда: broadcast
-2020-07-24 11:56:40,831 INFO server Возвращаем клиенту ('127.0.0.1', 51798) msg: command `broadcast` completed successfully; code: 200
-2020-07-24 11:57:24,706 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1595581044, "type": "status", "user": {"account_name": "Alex", "status": "Yep, I am here!"}, "account_name": "Alex"}, от клиента: 
-2020-07-24 11:57:24,706 INFO server Принята команда: broadcast
-2020-07-24 11:57:24,706 INFO server Возвращаем клиенту ('127.0.0.1', 51798) msg: command `broadcast` completed successfully; code: 200
-2020-07-24 11:58:00,659 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1595581080, "type": "status", "user": {"account_name": "Alex", "status": "Yep, I am here!"}, "account_name": "Alex"}, от клиента: 
-2020-07-24 11:58:00,659 INFO server Принята команда: broadcast
-2020-07-24 11:58:00,659 INFO server Возвращаем клиенту ('127.0.0.1', 51798) msg: command `broadcast` completed successfully; code: 200
-2020-07-24 12:00:36,629 INFO server Программа сервер запущена
-2020-07-24 12:00:36,629 INFO server Слушаем запросы от клиентов: ('', 7777)
-2020-07-24 12:10:11,815 INFO server Программа сервер запущена
-2020-07-24 12:10:11,831 INFO server Слушаем запросы от клиентов: ('', 7777)
-2020-07-24 12:10:12,331 INFO server Получен запрос на соединение от ('127.0.0.1', 51848)
-2020-07-24 12:10:12,346 INFO server Получен запрос на соединение от ('127.0.0.1', 51849)
-2020-07-24 12:10:52,472 INFO server Программа сервер запущена
-2020-07-24 12:10:52,487 INFO server Слушаем запросы от клиентов: ('', 7777)
-2020-07-24 12:10:52,487 INFO server Получен запрос на соединение от ('127.0.0.1', 51851)
-2020-07-24 12:10:52,487 INFO server Получен запрос на соединение от ('127.0.0.1', 51852)
-2020-07-24 12:11:19,784 INFO server Программа сервер запущена
-2020-07-24 12:11:19,784 INFO server Слушаем запросы от клиентов: ('', 7777)
-2020-07-24 12:11:20,284 INFO server Получен запрос на соединение от ('127.0.0.1', 51854)
-2020-07-24 12:11:20,284 INFO server Получен запрос на соединение от ('127.0.0.1', 51853)
-2020-07-24 13:14:12,082 INFO server Программа сервер запущена
-2020-07-24 13:14:33,597 ERROR server cannot unpack non-iterable Namespace object
-2020-07-24 13:15:32,488 INFO server Программа сервер запущена
-2020-07-24 13:17:39,129 INFO server Программа сервер запущена
-2020-07-24 13:19:04,786 INFO server Программа сервер запущена
-2020-07-24 13:19:16,161 ERROR server 'Namespace' object is not subscriptable
-2020-07-24 13:20:47,145 INFO server Программа сервер запущена
-2020-07-24 13:21:29,020 ERROR server an integer is required (got type str)
-2020-07-24 13:22:10,973 INFO server Программа сервер запущена
-2020-07-24 13:22:20,036 ERROR server an integer is required (got type str)
-2020-07-24 13:23:00,505 INFO server Программа сервер запущена
-2020-07-24 13:23:51,583 INFO server Программа сервер запущена
-2020-07-24 13:23:55,755 INFO server Слушаем запросы от клиентов: ('', 7777)
-2020-07-24 13:24:31,575 INFO server Программа сервер запущена
-2020-07-24 13:24:31,575 INFO server Слушаем запросы от клиентов: ('', 7777)
-2020-07-24 13:24:31,590 INFO server Получен запрос на соединение от ('127.0.0.1', 51974)
-2020-07-24 13:24:32,090 INFO server Получен запрос на соединение от ('127.0.0.1', 51973)
-2020-07-24 13:24:39,809 DEBUG server Принято сообщение: {"action": "presence", "time": 1595586279, "type": "status", "user": {"account_name": "Alex", "status": "Yep, I am here!"}, "account_name": "Alex"}, от клиента: 
-2020-07-24 13:24:39,809 INFO server Принята команда: presence
-2020-07-24 13:24:39,809 INFO server Возвращаем клиенту ('127.0.0.1', 51973) msg: command `presence` completed successfully; code: 200
-2020-07-24 13:24:48,950 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1595586288, "type": "status", "user": {"account_name": "Alex", "status": "Yep, I am here!"}, "account_name": "Alex"}, от клиента: 
-2020-07-24 13:24:48,950 INFO server Принята команда: broadcast
-2020-07-24 13:24:48,950 INFO server Возвращаем клиенту ('127.0.0.1', 51973) msg: command `broadcast` completed successfully; code: 200
-2020-07-24 14:39:27,341 INFO server Программа сервер запущена
-2020-07-24 14:39:27,341 INFO server Слушаем запросы от клиентов: ('', 7777)
-2020-07-24 14:39:27,841 INFO server Получен запрос на соединение от ('127.0.0.1', 52069)
-2020-07-24 14:39:27,857 INFO server Получен запрос на соединение от ('127.0.0.1', 52070)
-2020-07-24 14:39:35,372 DEBUG server Принято сообщение: {"action": "presence", "time": 1595590775, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
-2020-07-24 14:39:35,372 INFO server Принята команда: presence
-2020-07-24 14:39:35,372 INFO server Возвращаем клиенту ('127.0.0.1', 52069) msg: command `presence` completed successfully; code: 200
-2020-07-24 14:39:48,982 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1595590788, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
-2020-07-24 14:39:48,982 INFO server Принята команда: broadcast
-2020-07-24 14:39:48,982 INFO server Возвращаем клиенту ('127.0.0.1', 52069) msg: command `broadcast` completed successfully; code: 200
-2020-07-24 14:40:00,154 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:00,154 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:00,357 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:00,357 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:00,560 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:00,560 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:00,763 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:00,763 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:00,966 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:00,966 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:01,169 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:01,169 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:01,372 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:01,372 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:01,575 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:01,575 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:01,779 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:01,779 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:01,982 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:01,982 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:02,185 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:02,185 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:02,388 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:02,388 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:02,591 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:02,591 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:02,794 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:02,794 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:02,997 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:02,997 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:03,200 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:03,200 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:03,404 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:03,404 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:03,607 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:03,607 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:03,810 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:03,810 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:04,013 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:04,013 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:04,216 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:04,216 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:04,419 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:04,419 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:04,622 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:04,622 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:04,825 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:04,825 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:05,029 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:05,029 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:05,232 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:05,232 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:05,435 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:05,435 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:05,638 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:05,638 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:05,841 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:05,841 ERROR server Ошибка обработки запроса клиента <socket.socket fd=452, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 52070)>: Unexpected error
-2020-07-24 14:40:06,044 INFO server Клиент 452 ('127.0.0.1', 52070) отключился
-2020-07-24 14:40:06,044 INFO server Возвращаем клиенту ('127.0.0.1', 52070) msg: Unexpected error; code: 500
-2020-07-24 14:40:06,044 ERROR server [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2020-07-28 14:32:35,287 INFO server Программа сервер запущена
+2020-07-28 14:32:35,287 ERROR server Could not parse rfc1738 URL from string 'localhost'
+2020-07-28 14:33:06,506 INFO server Программа сервер запущена
+2020-07-28 14:34:32,569 INFO server Программа сервер запущена
+2020-07-28 14:34:47,444 ERROR server Could not parse rfc1738 URL from string ''
+2020-07-28 14:34:51,006 INFO server Программа сервер запущена
+2020-07-28 14:35:45,584 INFO server Программа сервер запущена
+2020-07-28 14:36:20,678 ERROR server Thread.__init__() not called
+2020-07-28 14:36:40,366 INFO server Программа сервер запущена
+2020-07-28 14:38:11,085 INFO server Программа сервер запущена
+2020-07-28 14:38:19,178 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-28 14:40:40,179 INFO server Получен запрос на соединение от ('192.168.0.50', 61718)
+2020-07-28 14:40:43,429 INFO server Возвращаем клиенту ('192.168.0.50', 61718) msg: Unexpected error; code: 500
+2020-07-28 14:40:43,429 ERROR server Ошибка обработки запроса клиента <socket.socket fd=572, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.50', 7777), raddr=('192.168.0.50', 61718)>: Unexpected error
+2020-07-28 14:40:44,038 INFO server Возвращаем клиенту ('192.168.0.50', 61718) msg: Unexpected error; code: 500
+2020-07-28 14:40:44,038 ERROR server Ошибка обработки запроса клиента <socket.socket fd=572, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.50', 7777), raddr=('192.168.0.50', 61718)>: Unexpected error
+2020-07-28 14:40:44,241 INFO server Возвращаем клиенту ('192.168.0.50', 61718) msg: Unexpected error; code: 500
+2020-07-28 14:40:44,241 ERROR server Ошибка обработки запроса клиента <socket.socket fd=572, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.50', 7777), raddr=('192.168.0.50', 61718)>: Unexpected error
+2020-07-28 14:40:44,444 INFO server Возвращаем клиенту ('192.168.0.50', 61718) msg: Unexpected error; code: 500
+2020-07-28 14:40:44,444 ERROR server Ошибка обработки запроса клиента <socket.socket fd=572, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.50', 7777), raddr=('192.168.0.50', 61718)>: Unexpected error
+2020-07-28 14:40:46,679 INFO server Возвращаем клиенту ('192.168.0.50', 61718) msg: Unexpected error; code: 500
+2020-07-28 14:40:46,679 ERROR server Ошибка обработки запроса клиента <socket.socket fd=572, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.50', 7777), raddr=('192.168.0.50', 61718)>: Unexpected error
+2020-07-28 14:52:03,555 INFO server Программа сервер запущена
+2020-07-28 14:52:03,618 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-28 14:52:21,827 INFO server Получен запрос на соединение от ('127.0.0.1', 61734)
+2020-07-28 15:18:17,459 INFO server Программа сервер запущена
+2020-07-28 15:18:17,490 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-28 15:18:17,787 INFO server Получен запрос на соединение от ('127.0.0.1', 61762)
+2020-07-28 15:18:17,803 INFO server Получен запрос на соединение от ('127.0.0.1', 61761)
+2020-07-28 15:25:49,610 INFO server Программа сервер запущена
+2020-07-28 15:25:49,672 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-28 15:28:24,235 INFO server Программа сервер запущена
+2020-07-28 15:28:24,297 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-28 15:28:36,424 INFO server Получен запрос на соединение от ('127.0.0.1', 61784)
+2020-07-28 15:29:17,868 DEBUG server Принято сообщение: {"action": "presence", "time": 1595939357, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "user_Vasya"}, от клиента: 
+2020-07-28 15:29:17,868 INFO server Принята команда: presence
+2020-07-28 15:29:45,743 INFO server Возвращаем клиенту ('127.0.0.1', 61784) msg: command `presence` completed successfully; code: 200
