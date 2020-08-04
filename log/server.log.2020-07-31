@@ -1,0 +1,509 @@
+2020-07-31 01:11:13,580 INFO server Программа сервер запущена
+2020-07-31 01:11:14,158 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 01:13:38,772 INFO server Получен запрос на соединение от ('127.0.0.1', 65414)
+2020-07-31 01:13:42,022 INFO server Клиент 540 ('127.0.0.1', 65414) отключился
+2020-07-31 01:22:11,610 INFO server Программа сервер запущена
+2020-07-31 01:22:11,657 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 01:23:17,877 INFO server Программа сервер запущена
+2020-07-31 01:23:17,909 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 01:24:17,937 INFO server Получен запрос на соединение от ('127.0.0.1', 65430)
+2020-07-31 01:24:32,968 DEBUG server Принято сообщение: {"action": "presence", "time": 1596147872, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "user_Vasya"}, от клиента: 
+2020-07-31 01:24:32,968 INFO server Принята команда: presence
+2020-07-31 01:24:32,984 INFO server Возвращаем клиенту ('127.0.0.1', 65430) msg: command `presence` completed successfully; code: 200
+2020-07-31 01:24:51,468 INFO server Клиент 624 ('127.0.0.1', 65430) отключился
+2020-07-31 01:25:21,156 INFO server Получен запрос на соединение от ('127.0.0.1', 65440)
+2020-07-31 01:25:31,718 INFO server Клиент 632 ('127.0.0.1', 65440) отключился
+2020-07-31 01:30:10,626 INFO server Программа сервер запущена
+2020-07-31 01:30:10,672 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 01:30:10,891 INFO server Получен запрос на соединение от ('127.0.0.1', 65452)
+2020-07-31 01:30:21,860 DEBUG server Принято сообщение: {"action": "presence", "time": 1596148221, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 01:30:21,860 INFO server Принята команда: presence
+2020-07-31 01:30:21,891 INFO server Возвращаем клиенту ('127.0.0.1', 65452) msg: command `presence` completed successfully; code: 200
+2020-07-31 01:30:34,282 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596148234, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 01:30:34,282 INFO server Принята команда: broadcast
+2020-07-31 01:30:34,282 INFO server Возвращаем клиенту ('127.0.0.1', 65452) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 01:32:59,923 INFO server Клиент 552 ('127.0.0.1', 65452) отключился
+2020-07-31 01:33:13,860 INFO server Программа сервер запущена
+2020-07-31 01:33:13,907 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 01:33:14,157 INFO server Получен запрос на соединение от ('127.0.0.1', 65454)
+2020-07-31 01:33:14,157 INFO server Получен запрос на соединение от ('127.0.0.1', 65453)
+2020-07-31 01:33:24,110 DEBUG server Принято сообщение: {"action": "presence", "time": 1596148403, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test2"}, от клиента: 
+2020-07-31 01:33:24,110 INFO server Принята команда: presence
+2020-07-31 01:33:24,126 INFO server Возвращаем клиенту ('127.0.0.1', 65454) msg: command `presence` completed successfully; code: 200
+2020-07-31 01:33:35,501 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596148415, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test2"}, от клиента: 
+2020-07-31 01:33:35,501 INFO server Принята команда: broadcast
+2020-07-31 01:33:35,501 INFO server Возвращаем клиенту ('127.0.0.1', 65454) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 01:34:01,501 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596148441, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test2"}, от клиента: 
+2020-07-31 01:34:01,501 INFO server Принята команда: broadcast
+2020-07-31 01:34:01,501 INFO server Возвращаем клиенту ('127.0.0.1', 65454) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 01:34:21,204 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596148461, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test2"}, от клиента: 
+2020-07-31 01:34:21,204 INFO server Принята команда: broadcast
+2020-07-31 01:34:21,204 INFO server Возвращаем клиенту ('127.0.0.1', 65454) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 01:34:27,095 INFO server Возвращаем клиенту ('127.0.0.1', 65453) msg: Unexpected error; code: 500
+2020-07-31 01:34:27,095 ERROR server Ошибка обработки запроса клиента <socket.socket fd=448, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 65453)>: Unexpected error
+2020-07-31 01:34:27,298 INFO server Клиент 448 ('127.0.0.1', 65453) отключился
+2020-07-31 01:34:27,298 INFO server Возвращаем клиенту ('127.0.0.1', 65453) msg: Unexpected error; code: 500
+2020-07-31 01:34:44,095 INFO server Программа сервер запущена
+2020-07-31 01:34:44,126 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 01:34:44,392 INFO server Получен запрос на соединение от ('127.0.0.1', 65457)
+2020-07-31 01:34:44,392 INFO server Получен запрос на соединение от ('127.0.0.1', 65456)
+2020-07-31 01:34:44,392 INFO server Получен запрос на соединение от ('127.0.0.1', 65455)
+2020-07-31 01:35:17,704 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596148517, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 01:35:17,704 INFO server Принята команда: broadcast
+2020-07-31 01:35:17,704 INFO server Возвращаем клиенту ('127.0.0.1', 65455) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 01:38:01,673 INFO server Программа сервер запущена
+2020-07-31 01:38:01,736 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 01:38:01,970 INFO server Получен запрос на соединение от ('127.0.0.1', 65458)
+2020-07-31 01:38:01,970 INFO server Получен запрос на соединение от ('127.0.0.1', 65459)
+2020-07-31 01:38:15,377 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596148695, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 01:38:15,377 INFO server Принята команда: broadcast
+2020-07-31 01:38:15,377 INFO server Возвращаем клиенту ('127.0.0.1', 65458) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 01:38:33,252 DEBUG server Принято сообщение: {"action": "presence", "time": 1596148713, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test2"}, от клиента: 
+2020-07-31 01:38:33,252 INFO server Принята команда: presence
+2020-07-31 01:38:33,267 INFO server Возвращаем клиенту ('127.0.0.1', 65459) msg: command `presence` completed successfully; code: 200
+2020-07-31 01:38:41,392 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596148721, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test2"}, от клиента: 
+2020-07-31 01:38:41,392 INFO server Принята команда: broadcast
+2020-07-31 01:38:41,392 INFO server Возвращаем клиенту ('127.0.0.1', 65459) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 01:38:49,111 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596148729, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test2"}, от клиента: 
+2020-07-31 01:38:49,111 INFO server Принята команда: broadcast
+2020-07-31 01:38:49,111 INFO server Возвращаем клиенту ('127.0.0.1', 65459) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 01:47:24,456 INFO server Программа сервер запущена
+2020-07-31 01:47:24,487 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 01:47:24,721 INFO server Получен запрос на соединение от ('127.0.0.1', 65474)
+2020-07-31 01:47:24,721 INFO server Получен запрос на соединение от ('127.0.0.1', 65473)
+2020-07-31 01:47:34,878 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596149254, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test2"}, от клиента: 
+2020-07-31 01:47:34,878 INFO server Принята команда: broadcast
+2020-07-31 01:47:34,878 INFO server Возвращаем клиенту ('127.0.0.1', 65473) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 01:47:54,987 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596149274, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 01:47:54,987 INFO server Принята команда: broadcast
+2020-07-31 01:47:54,987 INFO server Возвращаем клиенту ('127.0.0.1', 65474) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 01:48:05,143 DEBUG server Принято сообщение: {"action": "presence", "time": 1596149285, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test2"}, от клиента: 
+2020-07-31 01:48:05,143 INFO server Принята команда: presence
+2020-07-31 01:48:05,159 INFO server Возвращаем клиенту ('127.0.0.1', 65473) msg: command `presence` completed successfully; code: 200
+2020-07-31 01:50:54,378 INFO server Программа сервер запущена
+2020-07-31 01:50:54,425 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 01:50:54,644 INFO server Получен запрос на соединение от ('127.0.0.1', 65475)
+2020-07-31 01:51:03,988 DEBUG server Принято сообщение: {"action": "presence", "time": 1596149463, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 01:51:03,988 INFO server Принята команда: presence
+2020-07-31 01:51:04,003 INFO server Возвращаем клиенту ('127.0.0.1', 65475) msg: command `presence` completed successfully; code: 200
+2020-07-31 01:52:31,956 INFO server Клиент 492 ('127.0.0.1', 65475) отключился
+2020-07-31 01:52:49,696 INFO server Получен запрос на соединение от ('127.0.0.1', 65480)
+2020-07-31 01:52:57,415 INFO server Клиент 516 ('127.0.0.1', 65480) отключился
+2020-07-31 01:53:13,462 INFO server Получен запрос на соединение от ('127.0.0.1', 65485)
+2020-07-31 01:54:14,399 DEBUG server Принято сообщение: {"action": "presence", "time": 1596149633, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "user_Vasya"}, от клиента: 
+2020-07-31 01:54:14,399 INFO server Принята команда: presence
+2020-07-31 01:54:14,399 INFO server Возвращаем клиенту ('127.0.0.1', 65485) msg: Unexpected error; code: 500
+2020-07-31 01:54:14,399 ERROR server Ошибка обработки запроса клиента <socket.socket fd=492, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 65485)>: Unexpected error
+2020-07-31 01:55:18,384 INFO server Клиент 492 ('127.0.0.1', 65485) отключился
+2020-07-31 01:55:18,384 DEBUG server Принято сообщение: {"action": "presence", "time": 1596149633, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "user_Vasya"}, от клиента: 
+2020-07-31 01:55:18,384 INFO server Принята команда: presence
+2020-07-31 01:55:18,384 INFO server Возвращаем клиенту ('127.0.0.1', 65485) msg: Unexpected error; code: 500
+2020-07-31 02:01:03,283 INFO server Программа сервер запущена
+2020-07-31 02:01:03,330 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 02:01:03,595 INFO server Получен запрос на соединение от ('127.0.0.1', 65499)
+2020-07-31 02:01:03,595 INFO server Получен запрос на соединение от ('127.0.0.1', 65498)
+2020-07-31 02:01:10,299 DEBUG server Принято сообщение: {"action": "presence", "time": 1596150070, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test2"}, от клиента: 
+2020-07-31 02:01:10,299 INFO server Принята команда: presence
+2020-07-31 02:01:10,314 INFO server Возвращаем клиенту ('127.0.0.1', 65499) msg: command `presence` completed successfully; code: 200
+2020-07-31 02:01:15,189 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596150075, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test2"}, от клиента: 
+2020-07-31 02:01:15,189 INFO server Принята команда: broadcast
+2020-07-31 02:01:15,189 INFO server Возвращаем клиенту ('127.0.0.1', 65499) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 02:01:23,517 DEBUG server Принято сообщение: {"action": "presence", "time": 1596150083, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test2"}, от клиента: 
+2020-07-31 02:01:23,517 INFO server Принята команда: presence
+2020-07-31 02:01:23,533 INFO server Возвращаем клиенту ('127.0.0.1', 65498) msg: Unexpected error; code: 500
+2020-07-31 02:01:23,533 ERROR server Ошибка обработки запроса клиента <socket.socket fd=628, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 65498)>: Unexpected error
+2020-07-31 02:01:24,955 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596150084, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test2"}, от клиента: 
+2020-07-31 02:01:24,955 INFO server Принята команда: broadcast
+2020-07-31 02:01:24,955 INFO server Возвращаем клиенту ('127.0.0.1', 65499) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 02:01:27,595 DEBUG server Принято сообщение: {"action": "presence", "time": 1596150087, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 02:01:27,595 INFO server Принята команда: presence
+2020-07-31 02:01:27,595 INFO server Возвращаем клиенту ('127.0.0.1', 65498) msg: Unexpected error; code: 500
+2020-07-31 02:01:27,595 ERROR server Ошибка обработки запроса клиента <socket.socket fd=628, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 65498)>: Unexpected error
+2020-07-31 02:01:29,017 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596150088, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 02:01:29,017 INFO server Принята команда: broadcast
+2020-07-31 02:01:29,017 INFO server Возвращаем клиенту ('127.0.0.1', 65498) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 15:40:48,512 INFO server Программа сервер запущена
+2020-07-31 15:40:48,590 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 15:40:48,794 INFO server Получен запрос на соединение от ('127.0.0.1', 49934)
+2020-07-31 15:40:48,794 INFO server Получен запрос на соединение от ('127.0.0.1', 49933)
+2020-07-31 15:40:59,966 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596199259, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 15:40:59,966 INFO server Принята команда: broadcast
+2020-07-31 15:40:59,966 INFO server Возвращаем клиенту ('127.0.0.1', 49933) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 15:41:12,356 DEBUG server Принято сообщение: {"action": "presence", "time": 1596199272, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 15:41:12,356 INFO server Принята команда: presence
+2020-07-31 15:41:12,372 INFO server Возвращаем клиенту ('127.0.0.1', 49933) msg: command `presence` completed successfully; code: 200
+2020-07-31 15:50:13,310 INFO server Программа сервер запущена
+2020-07-31 15:50:13,389 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 15:50:13,560 INFO server Получен запрос на соединение от ('127.0.0.1', 49946)
+2020-07-31 15:50:13,592 INFO server Получен запрос на соединение от ('127.0.0.1', 49947)
+2020-07-31 16:00:38,015 INFO server Программа сервер запущена
+2020-07-31 16:00:38,062 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 16:00:38,296 INFO server Получен запрос на соединение от ('127.0.0.1', 49959)
+2020-07-31 16:00:42,968 INFO server Клиент 564 ('127.0.0.1', 49959) отключился
+2020-07-31 16:01:31,312 INFO server Программа сервер запущена
+2020-07-31 16:01:31,343 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 16:01:31,593 INFO server Получен запрос на соединение от ('127.0.0.1', 49960)
+2020-07-31 16:02:01,859 INFO server Клиент 476 ('127.0.0.1', 49960) отключился
+2020-07-31 16:03:12,803 INFO server Получен запрос на соединение от ('127.0.0.1', 49964)
+2020-07-31 16:03:18,897 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596200598, "user_login": "user_Vasya"}, от клиента: 
+2020-07-31 16:03:18,897 INFO server Принята команда: get_contacts
+2020-07-31 16:03:18,897 INFO server Возвращаем клиенту ('127.0.0.1', 49964) msg: Unexpected error; code: 500
+2020-07-31 16:03:18,897 ERROR server Ошибка обработки запроса клиента <socket.socket fd=328, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 49964)>: Unexpected error
+2020-07-31 16:04:15,788 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596200655, "user_login": "user_Vasya"}, от клиента: 
+2020-07-31 16:04:15,788 INFO server Принята команда: get_contacts
+2020-07-31 16:04:15,788 INFO server Возвращаем клиенту ('127.0.0.1', 49964) msg: Unexpected error; code: 500
+2020-07-31 16:04:15,788 ERROR server Ошибка обработки запроса клиента <socket.socket fd=328, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 49964)>: Unexpected error
+2020-07-31 16:04:27,772 INFO server Клиент 328 ('127.0.0.1', 49964) отключился
+2020-07-31 16:04:27,772 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596200655, "user_login": "user_Vasya"}, от клиента: 
+2020-07-31 16:04:27,772 INFO server Принята команда: get_contacts
+2020-07-31 16:04:27,772 INFO server Возвращаем клиенту ('127.0.0.1', 49964) msg: Unexpected error; code: 500
+2020-07-31 16:05:12,909 INFO server Программа сервер запущена
+2020-07-31 16:05:12,956 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 16:05:13,175 INFO server Получен запрос на соединение от ('127.0.0.1', 49970)
+2020-07-31 16:08:04,003 INFO server Клиент 540 ('127.0.0.1', 49970) отключился
+2020-07-31 16:08:22,038 INFO server Получен запрос на соединение от ('127.0.0.1', 49975)
+2020-07-31 16:09:21,147 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596200922, "user_login": "user_Vasya"}, от клиента: 
+2020-07-31 16:09:21,147 INFO server Принята команда: get_contacts
+2020-07-31 16:09:21,147 INFO server Возвращаем клиенту ('127.0.0.1', 49975) msg: Unexpected error; code: 500
+2020-07-31 16:09:21,147 ERROR server Ошибка обработки запроса клиента <socket.socket fd=324, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 49975)>: Unexpected error
+2020-07-31 16:10:54,382 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596201002, "user_login": "user_Vasya"}, от клиента: 
+2020-07-31 16:10:54,382 INFO server Принята команда: get_contacts
+2020-07-31 16:10:54,382 INFO server Возвращаем клиенту ('127.0.0.1', 49975) msg: Unexpected error; code: 500
+2020-07-31 16:10:54,382 ERROR server Ошибка обработки запроса клиента <socket.socket fd=324, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 49975)>: Unexpected error
+2020-07-31 17:05:17,659 INFO server Программа сервер запущена
+2020-07-31 17:05:17,690 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:05:17,940 INFO server Получен запрос на соединение от ('127.0.0.1', 50035)
+2020-07-31 17:05:21,190 INFO server Клиент 504 ('127.0.0.1', 50035) отключился
+2020-07-31 17:05:34,279 INFO server Получен запрос на соединение от ('127.0.0.1', 50040)
+2020-07-31 17:05:52,154 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596204350, "user_login": "user_Vasya"}, от клиента: 
+2020-07-31 17:05:52,154 INFO server Принята команда: get_contacts
+2020-07-31 17:05:52,154 INFO server Возвращаем клиенту ('127.0.0.1', 50040) msg: Unexpected error; code: 500
+2020-07-31 17:05:52,154 ERROR server Ошибка обработки запроса клиента <socket.socket fd=464, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50040)>: Unexpected error
+2020-07-31 17:08:49,307 INFO server Программа сервер запущена
+2020-07-31 17:08:49,338 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:08:49,588 INFO server Получен запрос на соединение от ('127.0.0.1', 50041)
+2020-07-31 17:09:01,573 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596204541, "user_login": "test1"}, от клиента: 
+2020-07-31 17:09:01,573 INFO server Принята команда: get_contacts
+2020-07-31 17:09:01,573 INFO server Возвращаем клиенту ('127.0.0.1', 50041) msg: Unexpected error; code: 500
+2020-07-31 17:09:01,573 ERROR server Ошибка обработки запроса клиента <socket.socket fd=532, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50041)>: Unexpected error
+2020-07-31 17:09:09,495 INFO server Клиент 532 ('127.0.0.1', 50041) отключился
+2020-07-31 17:09:09,495 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596204541, "user_login": "test1"}, от клиента: 
+2020-07-31 17:09:09,495 INFO server Принята команда: get_contacts
+2020-07-31 17:09:09,495 INFO server Возвращаем клиенту ('127.0.0.1', 50041) msg: Unexpected error; code: 500
+2020-07-31 17:09:22,167 INFO server Программа сервер запущена
+2020-07-31 17:09:22,198 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:09:22,432 INFO server Получен запрос на соединение от ('127.0.0.1', 50042)
+2020-07-31 17:09:25,276 INFO server Клиент 436 ('127.0.0.1', 50042) отключился
+2020-07-31 17:09:35,186 INFO server Получен запрос на соединение от ('127.0.0.1', 50047)
+2020-07-31 17:09:54,483 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596204589, "user_login": "user_Vasya"}, от клиента: 
+2020-07-31 17:09:54,483 INFO server Принята команда: get_contacts
+2020-07-31 17:09:54,483 INFO server Возвращаем клиенту ('127.0.0.1', 50047) msg: Unexpected error; code: 500
+2020-07-31 17:09:54,483 ERROR server Ошибка обработки запроса клиента <socket.socket fd=540, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50047)>: Unexpected error
+2020-07-31 17:10:17,030 INFO server Клиент 540 ('127.0.0.1', 50047) отключился
+2020-07-31 17:10:17,030 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596204589, "user_login": "user_Vasya"}, от клиента: 
+2020-07-31 17:10:17,030 INFO server Принята команда: get_contacts
+2020-07-31 17:10:17,030 INFO server Возвращаем клиенту ('127.0.0.1', 50047) msg: Unexpected error; code: 500
+2020-07-31 17:12:07,916 INFO server Программа сервер запущена
+2020-07-31 17:12:07,963 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:12:08,213 INFO server Получен запрос на соединение от ('127.0.0.1', 50054)
+2020-07-31 17:12:18,776 INFO server Клиент 372 ('127.0.0.1', 50054) отключился
+2020-07-31 17:12:32,220 INFO server Получен запрос на соединение от ('127.0.0.1', 50059)
+2020-07-31 17:13:53,486 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596204783, "user_login": "user_Vasya"}, от клиента: 
+2020-07-31 17:13:53,486 INFO server Принята команда: get_contacts
+2020-07-31 17:13:53,486 INFO server Возвращаем клиенту ('127.0.0.1', 50059) msg: Unexpected error; code: 500
+2020-07-31 17:13:53,486 ERROR server Ошибка обработки запроса клиента <socket.socket fd=492, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50059)>: Unexpected error
+2020-07-31 17:16:39,997 INFO server Программа сервер запущена
+2020-07-31 17:16:40,044 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:16:40,279 INFO server Получен запрос на соединение от ('127.0.0.1', 50071)
+2020-07-31 17:16:44,950 DEBUG server Принято сообщение: {"action": "presence", "time": 1596205004, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:16:44,950 INFO server Принята команда: presence
+2020-07-31 17:16:44,966 INFO server Возвращаем клиенту ('127.0.0.1', 50071) msg: command `presence` completed successfully; code: 200
+2020-07-31 17:17:17,263 INFO server Клиент 392 ('127.0.0.1', 50071) отключился
+2020-07-31 17:26:58,780 INFO server Программа сервер запущена
+2020-07-31 17:26:58,827 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:26:59,061 INFO server Получен запрос на соединение от ('127.0.0.1', 50074)
+2020-07-31 17:27:02,514 DEBUG server Принято сообщение: {"action": "presence", "time": 1596205622, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:27:02,514 INFO server Принята команда: presence
+2020-07-31 17:27:02,530 INFO server Возвращаем клиенту ('127.0.0.1', 50074) msg: command `presence` completed successfully; code: 200
+2020-07-31 17:27:31,171 INFO server Клиент 580 ('127.0.0.1', 50074) отключился
+2020-07-31 17:29:01,889 INFO server Программа сервер запущена
+2020-07-31 17:29:01,936 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:29:02,171 INFO server Получен запрос на соединение от ('127.0.0.1', 50086)
+2020-07-31 17:29:07,046 DEBUG server Принято сообщение: {"action": "presence", "time": 1596205746, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:29:07,046 INFO server Принята команда: presence
+2020-07-31 17:29:07,061 INFO server Возвращаем клиенту ('127.0.0.1', 50086) msg: command `presence` completed successfully; code: 200
+2020-07-31 17:29:21,483 DEBUG server Принято сообщение: {"action": "presence", "time": 1596205761, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:29:21,483 INFO server Принята команда: presence
+2020-07-31 17:29:21,483 INFO server Возвращаем клиенту ('127.0.0.1', 50086) msg: Unexpected error; code: 500
+2020-07-31 17:29:21,483 ERROR server Ошибка обработки запроса клиента <socket.socket fd=456, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50086)>: Unexpected error
+2020-07-31 17:29:31,233 INFO server Клиент 456 ('127.0.0.1', 50086) отключился
+2020-07-31 17:29:31,233 DEBUG server Принято сообщение: {"action": "presence", "time": 1596205761, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:29:31,233 INFO server Принята команда: presence
+2020-07-31 17:29:31,233 INFO server Возвращаем клиенту ('127.0.0.1', 50086) msg: Unexpected error; code: 500
+2020-07-31 17:33:57,624 INFO server Программа сервер запущена
+2020-07-31 17:33:57,671 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:33:57,874 INFO server Получен запрос на соединение от ('127.0.0.1', 50088)
+2020-07-31 17:34:08,031 DEBUG server Принято сообщение: {"action": "presence", "time": 1596206047, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:34:08,031 INFO server Принята команда: presence
+2020-07-31 17:34:08,046 INFO server Возвращаем клиенту ('127.0.0.1', 50088) msg: command `presence` completed successfully; code: 200
+2020-07-31 17:34:15,765 DEBUG server Принято сообщение: {"action": "presence", "time": 1596206055, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:34:15,765 INFO server Принята команда: presence
+2020-07-31 17:34:15,765 INFO server Возвращаем клиенту ('127.0.0.1', 50088) msg: Unexpected error; code: 500
+2020-07-31 17:34:15,765 ERROR server Ошибка обработки запроса клиента <socket.socket fd=568, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50088)>: Unexpected error
+2020-07-31 17:34:30,796 INFO server Клиент 568 ('127.0.0.1', 50088) отключился
+2020-07-31 17:34:30,796 DEBUG server Принято сообщение: {"action": "presence", "time": 1596206055, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:34:30,796 INFO server Принята команда: presence
+2020-07-31 17:34:30,796 INFO server Возвращаем клиенту ('127.0.0.1', 50088) msg: Unexpected error; code: 500
+2020-07-31 17:36:27,312 INFO server Программа сервер запущена
+2020-07-31 17:36:27,343 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:36:27,593 INFO server Получен запрос на соединение от ('127.0.0.1', 50089)
+2020-07-31 17:37:02,328 DEBUG server Принято сообщение: {"action": "presence", "time": 1596206192, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:37:02,328 INFO server Принята команда: presence
+2020-07-31 17:37:02,344 INFO server Возвращаем клиенту ('127.0.0.1', 50089) msg: command `presence` completed successfully; code: 200
+2020-07-31 17:37:25,500 INFO server Клиент 492 ('127.0.0.1', 50089) отключился
+2020-07-31 17:38:58,078 INFO server Получен запрос на соединение от ('127.0.0.1', 50090)
+2020-07-31 17:38:58,313 INFO server Программа сервер запущена
+2020-07-31 17:39:03,156 DEBUG server Принято сообщение: {"action": "presence", "time": 1596206342, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:39:03,156 INFO server Принята команда: presence
+2020-07-31 17:39:03,172 INFO server Возвращаем клиенту ('127.0.0.1', 50090) msg: command `presence` completed successfully; code: 200
+2020-07-31 17:39:59,235 INFO server Клиент 504 ('127.0.0.1', 50090) отключился
+2020-07-31 17:40:29,016 INFO server Программа сервер запущена
+2020-07-31 17:40:29,047 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:40:29,297 INFO server Получен запрос на соединение от ('127.0.0.1', 50091)
+2020-07-31 17:41:04,813 INFO server Программа сервер запущена
+2020-07-31 17:41:04,860 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:41:05,094 INFO server Получен запрос на соединение от ('127.0.0.1', 50092)
+2020-07-31 17:41:09,563 DEBUG server Принято сообщение: {"action": "presence", "time": 1596206469, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:41:09,563 INFO server Принята команда: presence
+2020-07-31 17:41:09,578 INFO server Возвращаем клиенту ('127.0.0.1', 50092) msg: command `presence` completed successfully; code: 200
+2020-07-31 17:41:14,453 DEBUG server Принято сообщение: {"action": "presence", "time": 1596206474, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:41:14,453 INFO server Принята команда: presence
+2020-07-31 17:41:14,453 INFO server Возвращаем клиенту ('127.0.0.1', 50092) msg: Unexpected error; code: 500
+2020-07-31 17:41:14,453 ERROR server Ошибка обработки запроса клиента <socket.socket fd=380, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50092)>: Unexpected error
+2020-07-31 17:41:26,032 DEBUG server Принято сообщение: {"action": "presence", "time": 1596206485, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:41:26,032 INFO server Принята команда: presence
+2020-07-31 17:41:26,032 INFO server Возвращаем клиенту ('127.0.0.1', 50092) msg: Unexpected error; code: 500
+2020-07-31 17:41:26,032 ERROR server Ошибка обработки запроса клиента <socket.socket fd=380, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50092)>: Unexpected error
+2020-07-31 17:41:51,219 INFO server Клиент 380 ('127.0.0.1', 50092) отключился
+2020-07-31 17:41:51,219 DEBUG server Принято сообщение: {"action": "presence", "time": 1596206485, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:41:51,219 INFO server Принята команда: presence
+2020-07-31 17:41:51,219 INFO server Возвращаем клиенту ('127.0.0.1', 50092) msg: Unexpected error; code: 500
+2020-07-31 17:42:03,594 INFO server Программа сервер запущена
+2020-07-31 17:42:03,625 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:42:03,875 INFO server Получен запрос на соединение от ('127.0.0.1', 50093)
+2020-07-31 17:42:08,344 INFO server Клиент 544 ('127.0.0.1', 50093) отключился
+2020-07-31 17:42:23,545 INFO server Получен запрос на соединение от ('127.0.0.1', 50098)
+2020-07-31 17:42:38,373 INFO server Клиент 552 ('127.0.0.1', 50098) отключился
+2020-07-31 17:43:04,061 INFO server Получен запрос на соединение от ('127.0.0.1', 50103)
+2020-07-31 17:43:25,389 DEBUG server Принято сообщение: {"action": "presence", "time": 1596206587, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "user_Vasya"}, от клиента: 
+2020-07-31 17:43:25,389 INFO server Принята команда: presence
+2020-07-31 17:43:25,405 INFO server Возвращаем клиенту ('127.0.0.1', 50103) msg: command `presence` completed successfully; code: 200
+2020-07-31 17:44:47,467 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596206681, "user_login": "user_Vasya"}, от клиента: 
+2020-07-31 17:44:47,467 INFO server Принята команда: get_contacts
+2020-07-31 17:44:47,467 INFO server Возвращаем клиенту ('127.0.0.1', 50103) msg: Unexpected error; code: 500
+2020-07-31 17:44:47,467 ERROR server Ошибка обработки запроса клиента <socket.socket fd=544, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50103)>: Unexpected error
+2020-07-31 17:45:41,702 DEBUG server Принято сообщение: {"action": "presence", "time": 1596206738, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "user_Vasya"}, от клиента: 
+2020-07-31 17:45:41,702 INFO server Принята команда: presence
+2020-07-31 17:45:41,702 INFO server Возвращаем клиенту ('127.0.0.1', 50103) msg: Unexpected error; code: 500
+2020-07-31 17:45:41,702 ERROR server Ошибка обработки запроса клиента <socket.socket fd=544, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50103)>: Unexpected error
+2020-07-31 17:45:49,624 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596206749, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "user_Vasya"}, от клиента: 
+2020-07-31 17:45:49,624 INFO server Принята команда: broadcast
+2020-07-31 17:45:49,624 INFO server Возвращаем клиенту ('127.0.0.1', 50103) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 17:45:57,546 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596206757, "user_login": "user_Vasya"}, от клиента: 
+2020-07-31 17:45:57,546 INFO server Принята команда: get_contacts
+2020-07-31 17:45:57,546 INFO server Возвращаем клиенту ('127.0.0.1', 50103) msg: Unexpected error; code: 500
+2020-07-31 17:45:57,546 ERROR server Ошибка обработки запроса клиента <socket.socket fd=544, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50103)>: Unexpected error
+2020-07-31 17:48:12,103 INFO server Программа сервер запущена
+2020-07-31 17:48:12,134 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:48:12,384 INFO server Получен запрос на соединение от ('127.0.0.1', 50115)
+2020-07-31 17:48:14,212 INFO server Клиент 548 ('127.0.0.1', 50115) отключился
+2020-07-31 17:48:30,150 INFO server Программа сервер запущена
+2020-07-31 17:48:30,197 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:48:30,431 INFO server Получен запрос на соединение от ('127.0.0.1', 50123)
+2020-07-31 17:48:33,884 DEBUG server Принято сообщение: {"action": "presence", "time": 1596206913, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:48:33,884 INFO server Принята команда: presence
+2020-07-31 17:48:33,900 INFO server Возвращаем клиенту ('127.0.0.1', 50123) msg: command `presence` completed successfully; code: 200
+2020-07-31 17:48:38,369 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596206918, "user_login": "test1"}, от клиента: 
+2020-07-31 17:48:38,369 INFO server Принята команда: get_contacts
+2020-07-31 17:48:38,369 INFO server Возвращаем клиенту ('127.0.0.1', 50123) msg: Unexpected error; code: 500
+2020-07-31 17:48:38,369 ERROR server Ошибка обработки запроса клиента <socket.socket fd=552, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50123)>: Unexpected error
+2020-07-31 17:48:38,369 ERROR server 'account_name'
+2020-07-31 17:50:26,699 INFO server Программа сервер запущена
+2020-07-31 17:50:26,761 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:50:40,804 INFO server Получен запрос на соединение от ('127.0.0.1', 50129)
+2020-07-31 17:50:47,711 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596207047, "user_login": "user_Vasya"}, от клиента: 
+2020-07-31 17:50:47,711 INFO server Принята команда: get_contacts
+2020-07-31 17:50:47,711 INFO server Возвращаем клиенту ('127.0.0.1', 50129) msg: Unexpected error; code: 500
+2020-07-31 17:52:25,378 INFO server Программа сервер запущена
+2020-07-31 17:52:25,440 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:52:34,569 INFO server Получен запрос на соединение от ('127.0.0.1', 50134)
+2020-07-31 17:52:39,037 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596207158, "user_login": "user_Vasya"}, от клиента: 
+2020-07-31 17:52:39,037 INFO server Принята команда: get_contacts
+2020-07-31 17:53:37,088 INFO server Программа сервер запущена
+2020-07-31 17:53:37,135 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:53:37,369 INFO server Получен запрос на соединение от ('127.0.0.1', 50135)
+2020-07-31 17:53:42,041 DEBUG server Принято сообщение: {"action": "presence", "time": 1596207221, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:53:42,041 INFO server Принята команда: presence
+2020-07-31 17:53:42,057 INFO server Возвращаем клиенту ('127.0.0.1', 50135) msg: command `presence` completed successfully; code: 200
+2020-07-31 17:53:46,526 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596207226, "user_login": "test1"}, от клиента: 
+2020-07-31 17:53:46,526 INFO server Принята команда: get_contacts
+2020-07-31 17:53:46,526 INFO server Возвращаем клиенту ('127.0.0.1', 50135) msg: command `get_contacts` completed successfully; code: 200
+2020-07-31 17:54:24,916 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596207264, "user_login": "test1"}, от клиента: 
+2020-07-31 17:54:24,916 INFO server Принята команда: get_contacts
+2020-07-31 17:54:24,916 INFO server Возвращаем клиенту ('127.0.0.1', 50135) msg: command `get_contacts` completed successfully; code: 200
+2020-07-31 17:56:53,307 INFO server Получен запрос на соединение от ('127.0.0.1', 50137)
+2020-07-31 17:56:53,526 INFO server Программа сервер запущена
+2020-07-31 17:57:07,526 INFO server Клиент 484 ('127.0.0.1', 50137) отключился
+2020-07-31 17:57:14,432 INFO server Клиент 456 ('127.0.0.1', 50135) отключился
+2020-07-31 17:57:23,870 INFO server Программа сервер запущена
+2020-07-31 17:57:23,901 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:57:24,151 INFO server Получен запрос на соединение от ('127.0.0.1', 50138)
+2020-07-31 17:57:31,464 DEBUG server Принято сообщение: {"action": "presence", "time": 1596207451, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:57:31,464 INFO server Принята команда: presence
+2020-07-31 17:57:31,479 INFO server Возвращаем клиенту ('127.0.0.1', 50138) msg: command `presence` completed successfully; code: 200
+2020-07-31 17:58:02,557 INFO server Клиент 460 ('127.0.0.1', 50138) отключился
+2020-07-31 17:59:36,183 INFO server Программа сервер запущена
+2020-07-31 17:59:36,229 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 17:59:36,464 INFO server Получен запрос на соединение от ('127.0.0.1', 50150)
+2020-07-31 17:59:41,136 DEBUG server Принято сообщение: {"action": "presence", "time": 1596207580, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 17:59:41,136 INFO server Принята команда: presence
+2020-07-31 17:59:41,151 INFO server Возвращаем клиенту ('127.0.0.1', 50150) msg: command `presence` completed successfully; code: 200
+2020-07-31 18:04:24,714 INFO server Клиент 552 ('127.0.0.1', 50150) отключился
+2020-07-31 18:06:06,933 INFO server Программа сервер запущена
+2020-07-31 18:06:06,980 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 18:06:07,230 INFO server Получен запрос на соединение от ('127.0.0.1', 50151)
+2020-07-31 18:06:12,308 DEBUG server Принято сообщение: {"action": "presence", "time": 1596207971, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 18:06:12,308 INFO server Принята команда: presence
+2020-07-31 18:06:12,324 INFO server Возвращаем клиенту ('127.0.0.1', 50151) msg: command `presence` completed successfully; code: 200
+2020-07-31 18:08:42,090 INFO server Клиент 504 ('127.0.0.1', 50151) отключился
+2020-07-31 18:09:24,981 INFO server Программа сервер запущена
+2020-07-31 18:09:25,028 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 18:09:25,262 INFO server Получен запрос на соединение от ('127.0.0.1', 50153)
+2020-07-31 18:09:40,496 DEBUG server Принято сообщение: {"action": "presence", "time": 1596208179, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 18:09:40,496 INFO server Принята команда: presence
+2020-07-31 18:09:40,512 INFO server Возвращаем клиенту ('127.0.0.1', 50153) msg: command `presence` completed successfully; code: 200
+2020-07-31 18:12:44,637 INFO server Программа сервер запущена
+2020-07-31 18:12:44,684 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 18:12:44,934 INFO server Получен запрос на соединение от ('127.0.0.1', 50154)
+2020-07-31 18:12:50,622 DEBUG server Принято сообщение: {"action": "presence", "time": 1596208369, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 18:12:50,622 INFO server Принята команда: presence
+2020-07-31 18:12:50,637 INFO server Возвращаем клиенту ('127.0.0.1', 50154) msg: command `presence` completed successfully; code: 200
+2020-07-31 18:15:14,122 INFO server Программа сервер запущена
+2020-07-31 18:15:14,153 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 18:15:14,403 INFO server Получен запрос на соединение от ('127.0.0.1', 50166)
+2020-07-31 18:15:59,294 DEBUG server Принято сообщение: {"action": "presence", "time": 1596208558, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 18:15:59,294 INFO server Принята команда: presence
+2020-07-31 18:15:59,310 INFO server Возвращаем клиенту ('127.0.0.1', 50166) msg: command `presence` completed successfully; code: 200
+2020-07-31 18:16:23,888 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596208582, "user_login": "test1"}, от клиента: 
+2020-07-31 18:16:23,888 INFO server Принята команда: get_contacts
+2020-07-31 18:16:23,888 INFO server Возвращаем клиенту ('127.0.0.1', 50166) msg: command `get_contacts` completed successfully; code: 200
+2020-07-31 18:16:40,950 INFO server Возвращаем клиенту ('127.0.0.1', 50166) msg: Unexpected error; code: 500
+2020-07-31 18:16:40,950 ERROR server Ошибка обработки запроса клиента <socket.socket fd=384, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50166)>: Unexpected error
+2020-07-31 18:16:40,950 ERROR server Expecting value: line 1 column 1 (char 0)
+2020-07-31 18:16:41,153 INFO server Клиент 384 ('127.0.0.1', 50166) отключился
+2020-07-31 18:16:41,153 INFO server Возвращаем клиенту ('127.0.0.1', 50166) msg: Unexpected error; code: 500
+2020-07-31 18:17:55,122 INFO server Программа сервер запущена
+2020-07-31 18:17:55,169 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 18:17:55,404 INFO server Получен запрос на соединение от ('127.0.0.1', 50168)
+2020-07-31 18:17:55,419 INFO server Получен запрос на соединение от ('127.0.0.1', 50169)
+2020-07-31 18:18:54,544 INFO server Программа сервер запущена
+2020-07-31 18:18:54,576 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 18:18:54,826 INFO server Получен запрос на соединение от ('127.0.0.1', 50171)
+2020-07-31 18:18:54,826 INFO server Получен запрос на соединение от ('127.0.0.1', 50170)
+2020-07-31 18:19:59,154 INFO server Программа сервер запущена
+2020-07-31 18:19:59,201 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 18:19:59,451 INFO server Получен запрос на соединение от ('127.0.0.1', 50173)
+2020-07-31 18:19:59,466 INFO server Получен запрос на соединение от ('127.0.0.1', 50172)
+2020-07-31 18:20:07,591 DEBUG server Принято сообщение: {"action": "presence", "time": 1596208806, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 18:20:07,591 INFO server Принята команда: presence
+2020-07-31 18:20:07,607 INFO server Возвращаем клиенту ('127.0.0.1', 50172) msg: command `presence` completed successfully; code: 200
+2020-07-31 18:20:12,076 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596208811, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 18:20:12,076 INFO server Принята команда: broadcast
+2020-07-31 18:20:12,076 INFO server Возвращаем клиенту ('127.0.0.1', 50172) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 18:20:19,795 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596208818, "user_login": "test1"}, от клиента: 
+2020-07-31 18:20:19,795 INFO server Принята команда: get_contacts
+2020-07-31 18:20:19,795 INFO server Возвращаем клиенту ('127.0.0.1', 50172) msg: command `get_contacts` completed successfully; code: 200
+2020-07-31 18:21:38,373 INFO server Программа сервер запущена
+2020-07-31 18:21:38,420 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 18:21:38,654 INFO server Получен запрос на соединение от ('127.0.0.1', 50176)
+2020-07-31 18:21:38,654 INFO server Получен запрос на соединение от ('127.0.0.1', 50175)
+2020-07-31 18:21:44,545 DEBUG server Принято сообщение: {"action": "presence", "time": 1596208904, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 18:21:44,545 INFO server Принята команда: presence
+2020-07-31 18:21:44,560 INFO server Возвращаем клиенту ('127.0.0.1', 50175) msg: command `presence` completed successfully; code: 200
+2020-07-31 18:21:48,420 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596208908, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 18:21:48,420 INFO server Принята команда: broadcast
+2020-07-31 18:21:48,420 INFO server Возвращаем клиенту ('127.0.0.1', 50175) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 18:21:54,310 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596208914, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test2"}, от клиента: 
+2020-07-31 18:21:54,310 INFO server Принята команда: broadcast
+2020-07-31 18:21:54,310 INFO server Возвращаем клиенту ('127.0.0.1', 50176) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 18:21:54,514 INFO server Клиент 400 ('127.0.0.1', 50176) отключился
+2020-07-31 18:22:00,810 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596208920, "user_login": "test1"}, от клиента: 
+2020-07-31 18:22:00,810 INFO server Принята команда: get_contacts
+2020-07-31 18:22:00,810 INFO server Возвращаем клиенту ('127.0.0.1', 50175) msg: command `get_contacts` completed successfully; code: 200
+2020-07-31 18:23:30,029 INFO server Программа сервер запущена
+2020-07-31 18:23:30,076 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 18:23:30,311 INFO server Получен запрос на соединение от ('127.0.0.1', 50178)
+2020-07-31 18:23:30,342 INFO server Получен запрос на соединение от ('127.0.0.1', 50179)
+2020-07-31 18:23:43,545 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596209023, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test2"}, от клиента: 
+2020-07-31 18:23:43,545 INFO server Принята команда: broadcast
+2020-07-31 18:23:43,545 INFO server Возвращаем клиенту ('127.0.0.1', 50179) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 18:23:43,748 INFO server Клиент 544 ('127.0.0.1', 50179) отключился
+2020-07-31 18:26:14,264 DEBUG server Принято сообщение: {"action": "presence", "time": 1596209174, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 18:26:14,264 INFO server Принята команда: presence
+2020-07-31 18:26:14,280 INFO server Возвращаем клиенту ('127.0.0.1', 50178) msg: command `presence` completed successfully; code: 200
+2020-07-31 18:26:19,358 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596209179, "user_login": "test1"}, от клиента: 
+2020-07-31 18:26:19,358 INFO server Принята команда: get_contacts
+2020-07-31 18:26:19,358 INFO server Возвращаем клиенту ('127.0.0.1', 50178) msg: command `get_contacts` completed successfully; code: 200
+2020-07-31 18:26:51,780 INFO server Программа сервер запущена
+2020-07-31 18:26:51,811 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 18:26:52,061 INFO server Получен запрос на соединение от ('127.0.0.1', 50181)
+2020-07-31 18:26:52,061 INFO server Получен запрос на соединение от ('127.0.0.1', 50180)
+2020-07-31 18:26:59,577 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596209219, "user_login": "test1"}, от клиента: 
+2020-07-31 18:26:59,577 INFO server Принята команда: get_contacts
+2020-07-31 18:26:59,577 INFO server Возвращаем клиенту ('127.0.0.1', 50181) msg: command `get_contacts` completed successfully; code: 200
+2020-07-31 18:26:59,780 INFO server Клиент 516 ('127.0.0.1', 50181) отключился
+2020-07-31 18:27:02,420 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596209222, "user_login": "test2"}, от клиента: 
+2020-07-31 18:27:02,420 INFO server Принята команда: get_contacts
+2020-07-31 18:27:02,420 INFO server Возвращаем клиенту ('127.0.0.1', 50180) msg: command `get_contacts` completed successfully; code: 200
+2020-07-31 18:27:58,624 INFO server Программа сервер запущена
+2020-07-31 18:27:58,686 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 18:27:58,905 INFO server Получен запрос на соединение от ('127.0.0.1', 50182)
+2020-07-31 18:28:03,374 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596209283, "user_login": "test1"}, от клиента: 
+2020-07-31 18:28:03,374 INFO server Принята команда: get_contacts
+2020-07-31 18:28:03,374 INFO server Возвращаем клиенту ('127.0.0.1', 50182) msg: command `get_contacts` completed successfully; code: 200
+2020-07-31 18:28:35,577 INFO server Программа сервер запущена
+2020-07-31 18:28:35,608 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 18:28:35,858 INFO server Получен запрос на соединение от ('127.0.0.1', 50194)
+2020-07-31 18:28:38,296 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596209318, "user_login": "test1"}, от клиента: 
+2020-07-31 18:28:38,296 INFO server Принята команда: get_contacts
+2020-07-31 18:28:38,296 INFO server Возвращаем клиенту ('127.0.0.1', 50194) msg: command `get_contacts` completed successfully; code: 200
+2020-07-31 18:31:03,796 INFO server Программа сервер запущена
+2020-07-31 18:31:03,843 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 18:31:04,077 INFO server Получен запрос на соединение от ('127.0.0.1', 50195)
+2020-07-31 18:31:08,343 DEBUG server Принято сообщение: {"action": "get_contacts", "time": 1596209468, "user_login": "test1"}, от клиента: 
+2020-07-31 18:31:08,343 INFO server Принята команда: get_contacts
+2020-07-31 18:31:08,343 INFO server Возвращаем клиенту ('127.0.0.1', 50195) msg: command `get_contacts` completed successfully; code: 200
+2020-07-31 18:31:25,202 DEBUG server Принято сообщение: {"action": "presence", "time": 1596209485, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 18:31:25,202 INFO server Принята команда: presence
+2020-07-31 18:31:25,218 INFO server Возвращаем клиенту ('127.0.0.1', 50195) msg: command `presence` completed successfully; code: 200
+2020-07-31 18:34:06,218 INFO server Программа сервер запущена
+2020-07-31 18:34:06,249 INFO server Слушаем запросы от клиентов: ('', 7777)
+2020-07-31 18:34:06,468 INFO server Получен запрос на соединение от ('127.0.0.1', 50196)
+2020-07-31 18:34:10,124 DEBUG server Принято сообщение: {"action": "presence", "time": 1596209650, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 18:34:10,124 INFO server Принята команда: presence
+2020-07-31 18:34:10,140 INFO server Возвращаем клиенту ('127.0.0.1', 50196) msg: command `presence` completed successfully; code: 200
+2020-07-31 18:34:29,437 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596209669, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 18:34:29,437 INFO server Принята команда: broadcast
+2020-07-31 18:34:29,437 INFO server Возвращаем клиенту ('127.0.0.1', 50196) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 19:20:06,364 DEBUG server Принято сообщение: {"action": "presence", "time": 1596212406, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 19:20:06,364 INFO server Принята команда: presence
+2020-07-31 19:20:06,364 INFO server Возвращаем клиенту ('127.0.0.1', 50196) msg: Unexpected error; code: 500
+2020-07-31 19:20:06,364 ERROR server Ошибка обработки запроса клиента <socket.socket fd=588, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50196)>: Unexpected error
+2020-07-31 19:20:06,364 ERROR server (sqlite3.IntegrityError) UNIQUE constraint failed: Active_users.user
+[SQL: INSERT INTO "Active_users" (user, ip_address, port, login_time) VALUES (?, ?, ?, ?)]
+[parameters: (3, '127.0.0.1', 50196, '2020-07-31 19:20:06.364990')]
+(Background on this error at: http://sqlalche.me/e/13/gkpj)
+2020-07-31 19:20:07,786 DEBUG server Принято сообщение: {"action": "broadcast", "time": 1596212407, "type": "status", "user": {"account_name": "", "status": "Yep, I am here!"}, "account_name": "test1"}, от клиента: 
+2020-07-31 19:20:07,786 INFO server Принята команда: broadcast
+2020-07-31 19:20:07,786 INFO server Возвращаем клиенту ('127.0.0.1', 50196) msg: command `broadcast` completed successfully; code: 200
+2020-07-31 19:20:07,989 INFO server Клиент 588 ('127.0.0.1', 50196) отключился
