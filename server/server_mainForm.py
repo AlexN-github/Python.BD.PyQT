@@ -4,6 +4,7 @@ import sys
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtWidgets import qApp, QMainWindow, QApplication
 
+from server_adduserDialog import adduserDialog
 from server_database import ServerStorage
 
 
@@ -22,9 +23,18 @@ class MainForm(QMainWindow):
         self.actionRefresh.triggered.connect(self.actionRefresh_triggered)
         self.actionExit.triggered.connect(qApp.quit)
         self.userlist_listview.itemSelectionChanged.connect(self.userlist_listview_itemPressed)
+        self.adduser_pushButton.clicked.connect(lambda: (self.adduserDialog.exec_(), self.refresh_mainForm()))
+        self.deluser_pushButton.clicked.connect(lambda: (self.server.database.remove_user(self.userlist_listview.selectedItems()[0].text()), self.refresh_mainForm()))  #,
+
+        # Создаем подчиненные формы
+        self.adduserDialog = adduserDialog(self.server.database)
+
         self.refresh_mainForm()
 
         self.show()
+
+
+
 
     def actionRefresh_triggered(self):
         self.refresh_mainForm()
@@ -32,6 +42,8 @@ class MainForm(QMainWindow):
     def userlist_listview_itemPressed(self):
         current_item = self.userlist_listview.currentItem().text()
         user = self.get_userdata(current_item)
+        if not user:
+            return
         last_login = user[1]
         # print(last_login.strftime('%d-%m-%y %H:%M:%S'))
         self.lastlogin.setText(last_login.strftime('%d-%m-%y %H:%M:%S'))
@@ -100,7 +112,6 @@ class MainForm(QMainWindow):
                 ip.setEditable(False)
                 port = QStandardItem(str(port))
                 port.setEditable(False)
-                # Уберём милисекунды из строки времени, т.к. такая точность не требуется.
                 time = QStandardItem(str(time.strftime('%d-%m-%y %H:%M:%S')))
                 time.setEditable(False)
                 list.appendRow([user, ip, port, time])

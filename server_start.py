@@ -1,19 +1,27 @@
 # Программа сервера для получения приветствия от клиента и отправки ответа
 import argparse
+import binascii
 import configparser
+import hmac
 import json
-import logging
+#import logging
 import os
 import sys
 import select
 import threading
+from datetime import datetime
 
 from PyQt5.QtWidgets import QApplication
 
-from server_mainForm import MainForm
+#from log.server_log_config import logger
+#from server.server_mainForm import MainForm
 from socket import *
 
-from server_database import ServerStorage
+from server.server_database import ServerStorage
+#from server_database import ServerStorage
+
+from log.server_log_config import logger
+from server.server_mainForm import MainForm
 
 
 def args(server_addr_default, default_port):
@@ -47,8 +55,11 @@ class Server(threading.Thread):
         # Список подключённых клиентов.
         self.clients = []
 
-        # Список имен и сопоставленных сокетов
+        # Список имен и сопоставленных сокетов прошедших аутентификацию
         self.names = dict()
+
+        # Список сокетов в процессе аутентификации
+        self.authsock = []
 
         # Очередь запросов на обработку
         self.request_queue = {}
@@ -73,13 +84,63 @@ class Server(threading.Thread):
             return config
 
     def execute_command_presence(self, client, command):
+        def authorization():
+            # Находим random_str, который соответсвует обрабатываемому клиенту
+            random_str = [x[1] for x in self.authsock if x[0] == client][0]
+            # Проверяем что пользователь существует
+            if not self.database.check_user(command['sender']):
+                return False
+            hash = hmac.new(self.database.get_hash(command['sender']), random_str, 'MD5')
+            server_digest = hash.digest()
+            client_digest = binascii.a2b_base64(command['data'])
+            # Сравниваем клиентский и серверные ключи
+            res = hmac.compare_digest(server_digest, client_digest)
+            logger.info('Проверяем random_str= {0}'.format(random_str))
+            logger.info('self.database.get_hash(command[sender])= {0}'.format(self.database.get_hash(command['sender'])))
+
+            return res
+
         result = {}
-        client_ip, client_port = client.getpeername()
-        # Пишем в БД информацию о логине
-        self.database.user_login(command['sender'], client_ip, client_port)
-        result['msg'] = 'command `{0}` completed successfully'.format(command['action'])
-        result['code'] = 200
-        self.sending_responde(client, result)
+        if (not command['data'] == None) and authorization():
+            # Если авторизация успешна
+            # Проверяем, если этот пользователь активен в данный момент, то удаляем его текущуюю сессию
+            if command['sender'] in self.names.keys():
+                self.remove_client(self.names[command['sender']])
+            client_ip, client_port = client.getpeername()
+            # Пишем в БД информацию о логине
+            self.database.user_login(command['sender'], client_ip, client_port, '')
+            result['msg'] = 'command `{0}` completed successfully'.format(command['action'])
+            result['code'] = 200
+            self.sending_responde(client, result)
+            self.names[command['sender']] = client
+            # Находим элемент в списке и удаляем
+            authsock_item = [x for x in self.authsock if x[0] == client][0]
+            self.authsock.remove(authsock_item)
+        else:
+            # Если авторизация не успешна
+            # Персональный случайный код авторизации
+            # Набор байтов в hex представлении
+
+            random_str = binascii.hexlify(os.urandom(64))
+            self.authsock.append((client, random_str))
+
+            result = {}
+            result['msg'] = 'Unauthorized request'
+            result['code'] = 403
+            result['data'] = random_str.decode('ascii')
+            #result['data'] = '111'
+            #logger.info('Проверяем random_str= {0}'.format(random_str))
+            #logger.info('Проверяем random_str= {0}'.format(random_str.decode('ascii')))
+            #logger.info('Проверяем result[data]= {0}'.format(result['data']))
+
+
+            # Отправляем результат операции отправителю
+            self.sending_responde(client, result)
+
+            logger.debug('Принято сообщение: {0}, от клиента: {1}'.format(str(command), self.addr))
+            logger.info('Принята неавторизованная команда: {0}'.format(command['action']))
+            logger.info('Клиенту отправлен код 403, Код для авторизации= {0}'.format(result['data']))
+
         return result
 
     def execute_command_get_contacts(self, client, command):
@@ -87,6 +148,16 @@ class Server(threading.Thread):
         # Пишем в БД информацию о логине
         result['msg'] = 'command `{0}` completed successfully'.format(command['action'])
         result['contact_list'] = self.database.get_contacts(command['sender'])
+        result['code'] = 200
+        self.sending_responde(client, result)
+        return result
+
+    def execute_command_get_allUsers(self, client, command):
+        result = dict()
+        # Пишем в БД информацию о логине
+        result['msg'] = 'command `{0}` completed successfully'.format(command['action'])
+        result['allUsers_list'] = self.database.users_list()
+        print(self.database.users_list())
         result['code'] = 200
         self.sending_responde(client, result)
         return result
@@ -127,6 +198,13 @@ class Server(threading.Thread):
         return result
 
     def processing_command(self, client):
+        """
+        Обрабатываем запрос из очереди запросов.
+        Выбирает запрос из очереди по заданному кленту, парсит запрос из JSON и
+        вызывает обработчик конкретной команды (action)
+        :param client: Сокет в котором запрос от клиента
+        :return:
+        """
         def parsing_command(msg):
             command = json.loads(msg)
             return command
@@ -139,6 +217,8 @@ class Server(threading.Thread):
                 result = self.execute_command_broadcast(client, command)
             if action == 'get_contacts':
                 result = self.execute_command_get_contacts(client, command)
+            if action == 'get_allUsers':
+                result = self.execute_command_get_allUsers(client, command)
             if action == 'add_contact':
                 result = self.execute_command_add_contact(client, command)
             if action == 'del_contact':
@@ -157,14 +237,48 @@ class Server(threading.Thread):
         msg = self.request_queue[client]
         print('msg', msg)
         command = parsing_command(msg)
-        if command['sender'] not in self.names.keys():
-            self.names[command['sender']] = client
 
-        logger.debug('Принято сообщение: {0}, от клиента: {1}'.format(msg, self.addr))
-        logger.info('Принята команда: {0}'.format(command['action']))
-        return execute_command(command)
+        # Проверяем если авторизованный запрос либо PRESENSE(запрос на авторизацию), то
+        if command['sender'] in self.names.keys() or command['action'] == 'presence':
+            # Запрос авторизован и выполняем штатную обработку
+            logger.debug('Принято сообщение: {0}, от клиента: {1}'.format(msg, self.addr))
+            logger.info('Принята команда: {0}'.format(command['action']))
+            res = execute_command(command)
+            return res
+        else:
+            # Иначе это не авторизованный запрос и не запрос авторизации
+            # Запоминаем подключение в очереди на авторизацию,
+            # создаем персонаяльный случайный код авторизации для этого подключения
+            # и отправляем его клиенту с ответом 403
+
+            # Персональный случайный код авторизации
+            # Набор байтов в hex представлении
+            random_str = binascii.hexlify(os.urandom(64))
+            self.authsock.append((client, random_str))
+
+            result = {}
+            result['msg'] = 'Unauthorized request'
+            result['code'] = 403
+            result['data'] = random_str.decode('ascii')
+
+            # Отправляем результат операции отправителю
+            self.sending_responde(client, result)
+
+            logger.debug('Принято сообщение: {0}, от клиента: {1}'.format(msg, self.addr))
+            logger.info('Принята неавторизованная команда: {0}'.format(command['action']))
+            logger.info('Клиенту отправлен код 403, Код для авторизации= {0}'.format(result['data']))
+            # res = execute_command(command)
+
+            # print(digest)
+            # logger.debug(f'Auth message = {message_auth}')
+
+            return
+
 
     def sending_responde(self, client, command):
+        def myconverter(obj):
+            if isinstance(obj, datetime):
+                return obj.strftime('%d-%m-%y %H:%M:%S')
         if 'action' in command.keys() and command['action'] == 'send_message':
             logger.info(
                 'Отправляем клиенту {0} msg: {1}'.format(command['to'], command['message']))
@@ -172,7 +286,7 @@ class Server(threading.Thread):
             logger.info(
                 'Возвращаем клиенту {0} msg: {1}; code: {2}'.format(client.getpeername(), command['msg'], command['code']))
         # print('Возвращаем клиенту {0} msg: {1}; code: {2}'.format(client.getpeername(), result['msg'], result['code']))
-        msg_send = json.dumps(command)
+        msg_send = json.dumps(command, default=myconverter)
         client.send(msg_send.encode('utf-8'))
 
     def sending_message_brodcaste(self, client, result):
@@ -204,15 +318,33 @@ class Server(threading.Thread):
             except:
                 print('Клиент {} {} отключился'.format(sock.fileno(), sock.getpeername()))
                 logger.info('Клиент {} {} отключился'.format(sock.fileno(), sock.getpeername()))
-                self.clients.remove(sock)
+                self.remove_client(sock)
+                #self.clients.remove(sock)
 
     def queue_processing(self):
         """ Обрабатываем очередь запросов
         """
+        # Итерируемся по списку запросов, обрабатываем по одному и удаляем из очереди
         while self.request_queue != {}:
             request = next(iter(self.request_queue))
+            # Обрабатываем запрос
             self.processing_command(request)
+            # Удаляем запрос
             self.request_queue.pop(request, None)
+
+    def remove_client(self, client):
+        '''
+        Метод обработчик клиента с которым прервана связь.
+        Ищет клиента и удаляет его из списков и базы:
+        '''
+        logger.info(f'Клиент {client.getpeername()} отключился от сервера.')
+        for name in self.names:
+            if self.names[name] == client:
+                self.database.user_logout(name)
+                del self.names[name]
+                break
+        self.clients.remove(client)
+        client.close()
 
     def run(self):
         s = socket(AF_INET, SOCK_STREAM)  # Создает сокет TCP
@@ -242,6 +374,7 @@ class Server(threading.Thread):
                 except:
                     pass  # Ничего не делать, если какой-то клиент отключился
                 try:
+                    # Читаем все запросы которые пришли и помешаем их в очередь для обработки
                     self.read_requests(r)
                     if r:
                         print(r)
@@ -298,7 +431,7 @@ def main():
     server.start()
 
     # работем через консоль
-    # server.console_select_input()
+    #server.console_select_input()
 
     # Работаем через GUI
     server_app = QApplication(sys.argv)
@@ -309,7 +442,7 @@ def main():
 
 try:
     # Инициализируем логирование
-    logger = logging.getLogger('app.server')
+    #logger = logging.getLogger('app.server')
     logger.info('Программа сервер запущена')
 
     if __name__ == '__main__':

@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, ForeignKey, DateTime
+from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, ForeignKey, DateTime, Text
 from sqlalchemy.orm import mapper, sessionmaker
 from common.variables import *
 import datetime
@@ -9,9 +9,11 @@ class ServerStorage:
     # Класс - отображение таблицы всех пользователей
     # Экземпляр этого класса = запись в таблице AllUsers
     class AllUsers:
-        def __init__(self, username):
+        def __init__(self, username, passwd_hash):
             self.name = username
             self.last_login = datetime.datetime.now()
+            self.passwd_hash = passwd_hash
+            self.pubkey = None
             self.id = None
 
     # Класс - отображение таблицы активных пользователей:
@@ -67,7 +69,9 @@ class ServerStorage:
         users_table = Table('Users', self.metadata,
                             Column('id', Integer, primary_key=True),
                             Column('name', String, unique=True),
-                            Column('last_login', DateTime)
+                            Column('last_login', DateTime),
+                            Column('passwd_hash', String),
+                            Column('pubkey', Text)
                             )
 
         # Создаём таблицу активных пользователей
@@ -125,37 +129,114 @@ class ServerStorage:
         self.session.commit()
 
     # Функция выполняющяяся при входе пользователя, записывает в базу факт входа
-    def user_login(self, username, ip_address, port):
-        print(username, ip_address, port)
-        # Запрос в таблицу пользователей на наличие там пользователя с таким именем
+    #def user_login(self, username, ip_address, port):
+    #    print(username, ip_address, port)
+    #    # Запрос в таблицу пользователей на наличие там пользователя с таким именем
+    #    rez = self.session.query(self.AllUsers).filter_by(name=username)
+    #    #print(type(rez))
+    #    # Если имя пользователя уже присутствует в таблице, обновляем время последнего входа
+    #    if rez.count():
+    #        user = rez.first()
+    #        user.last_login = datetime.datetime.now()
+    #    # Если нет, то создаздаём нового пользователя
+    #    else:
+    #        # Создаем экземпляр класса self.AllUsers, через который передаем данные в таблицу
+    #        user = self.AllUsers(username)
+    #        self.session.add(user)
+    #        # Комит здесь нужен, чтобы присвоился ID
+    #        self.session.commit()
+    #        user_in_history = self.UsersHistory(user.id)
+    #        self.session.add(user_in_history)
+    #
+    #    # Теперь можно создать запись в таблицу активных пользователей о факте входа.
+    #    # Создаем экземпляр класса self.ActiveUsers, через который передаем данные в таблицу
+    #    new_active_user = self.ActiveUsers(user.id, ip_address, port, datetime.datetime.now())
+    #    self.session.add(new_active_user)#
+    #
+    #    # и сохранить в историю входов
+    #    # Создаем экземпляр класса self.LoginHistory, через который передаем данные в таблицу
+    #    history = self.LoginHistory(user.id, datetime.datetime.now(), ip_address, port)
+    #    self.session.add(history)
+    #
+    #    # Сохраняем изменения
+    #    self.session.commit()
+
+    def user_login(self, username, ip_address, port, key):
+        '''
+        Метод выполняющийся при входе пользователя, записывает в базу факт входа
+        Обновляет открытый ключ пользователя при его изменении.
+        '''
+        # Запрос в таблицу пользователей на наличие там пользователя с таким
+        # именем
         rez = self.session.query(self.AllUsers).filter_by(name=username)
-        #print(type(rez))
+
         # Если имя пользователя уже присутствует в таблице, обновляем время последнего входа
+        # и проверяем корректность ключа. Если клиент прислал новый ключ,
+        # сохраняем его.
         if rez.count():
             user = rez.first()
             user.last_login = datetime.datetime.now()
-        # Если нет, то создаздаём нового пользователя
+            if user.pubkey != key:
+                user.pubkey = key
+        # Если нету, то генерируем исключение
         else:
-            # Создаем экземпляр класса self.AllUsers, через который передаем данные в таблицу
-            user = self.AllUsers(username)
-            self.session.add(user)
-            # Комит здесь нужен, чтобы присвоился ID
-            self.session.commit()
-            user_in_history = self.UsersHistory(user.id)
-            self.session.add(user_in_history)
+            raise ValueError('Пользователь не зарегистрирован.')
 
-        # Теперь можно создать запись в таблицу активных пользователей о факте входа.
-        # Создаем экземпляр класса self.ActiveUsers, через который передаем данные в таблицу
-        new_active_user = self.ActiveUsers(user.id, ip_address, port, datetime.datetime.now())
+        # Теперь можно создать запись в таблицу активных пользователей о факте
+        # входа.
+        new_active_user = self.ActiveUsers(
+            user.id, ip_address, port, datetime.datetime.now())
         self.session.add(new_active_user)
 
         # и сохранить в историю входов
-        # Создаем экземпляр класса self.LoginHistory, через который передаем данные в таблицу
-        history = self.LoginHistory(user.id, datetime.datetime.now(), ip_address, port)
+        history = self.LoginHistory(
+            user.id, datetime.datetime.now(), ip_address, port)
         self.session.add(history)
 
-        # Сохраняем изменения
+        # Сохрраняем изменения
         self.session.commit()
+
+    def add_user(self, name, passwd_hash):
+        '''
+        Метод регистрации пользователя.
+        Принимает имя и хэш пароля, создаёт запись в таблице статистики.
+        '''
+        user_row = self.AllUsers(name, passwd_hash)
+        self.session.add(user_row)
+        self.session.commit()
+        history_row = self.UsersHistory(user_row.id)
+        self.session.add(history_row)
+        self.session.commit()
+
+    def remove_user(self, name):
+        '''Метод удаляющий пользователя из базы.'''
+        user = self.session.query(self.AllUsers).filter_by(name=name).first()
+        self.session.query(self.ActiveUsers).filter_by(user=user.id).delete()
+        self.session.query(self.LoginHistory).filter_by(name=user.id).delete()
+        self.session.query(self.UsersContacts).filter_by(user=user.id).delete()
+        self.session.query(
+            self.UsersContacts).filter_by(
+            contact=user.id).delete()
+        self.session.query(self.UsersHistory).filter_by(user=user.id).delete()
+        self.session.query(self.AllUsers).filter_by(name=name).delete()
+        self.session.commit()
+
+    def get_hash(self, name):
+        '''Метод получения хэша пароля пользователя.'''
+        user = self.session.query(self.AllUsers).filter_by(name=name).first()
+        return user.passwd_hash
+
+    def get_pubkey(self, name):
+        '''Метод получения публичного ключа пользователя.'''
+        user = self.session.query(self.AllUsers).filter_by(name=name).first()
+        return user.pubkey
+
+    def check_user(self, name):
+        '''Метод проверяющий существование пользователя.'''
+        if self.session.query(self.AllUsers).filter_by(name=name).count():
+            return True
+        else:
+            return False
 
     # Функция фиксирующая отключение пользователя
     def user_logout(self, username):
