@@ -1,3 +1,4 @@
+import os
 import sys
 import datetime
 from PyQt5 import uic
@@ -12,12 +13,12 @@ class usersSelectDialog(QDialog):
         self.initUI()
 
     def initUI(self):
-        uic.loadUi('client_usersSelectDialog.ui', self)
+        uic.loadUi(os.path.join(os.path.dirname(__file__), 'client_usersSelectDialog.ui'), self)
 
         # Определяем обработчики для событий
         self.buttonBox.accepted.connect(self.accept)
         self.buttonBox.rejected.connect(self.reject)
-        self.users_tableView.doubleClicked.connect(self.accept)  #lambda: self.accept()
+        self.users_tableView.doubleClicked.connect(self.accept)
 
     def fill_users_tableView(self, list_users):
         list = QStandardItemModel()
@@ -33,8 +34,6 @@ class usersSelectDialog(QDialog):
         self.users_tableView.resizeColumnsToContents()
 
 
-#'name', 'last_login'
-
 if __name__ == '__main__':
     class TestMainWindow(QMainWindow):
 
@@ -47,7 +46,6 @@ if __name__ == '__main__':
             self.usersSelectDialog = usersSelectDialog(self)
 
             self.show()
-            #self.openDialog()
 
         def openDialog1(self):
             def select_new_contact(lu):
@@ -88,7 +86,6 @@ if __name__ == '__main__':
 
     server_app = QApplication(sys.argv)
     mf = TestMainWindow()
-    #mf.clicked.connect(mf.refreshopenDialog())
     # Запускаем GUI
 
     server_app.exec_()

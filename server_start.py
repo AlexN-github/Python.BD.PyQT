@@ -4,22 +4,14 @@ import binascii
 import configparser
 import hmac
 import json
-#import logging
 import os
 import sys
 import select
 import threading
 from datetime import datetime
-
 from PyQt5.QtWidgets import QApplication
-
-#from log.server_log_config import logger
-#from server.server_mainForm import MainForm
 from socket import *
-
 from server.server_database import ServerStorage
-#from server_database import ServerStorage
-
 from log.server_log_config import logger
 from server.server_mainForm import MainForm
 
@@ -95,13 +87,11 @@ class Server(threading.Thread):
             client_digest = binascii.a2b_base64(command['data'])
             # Сравниваем клиентский и серверные ключи
             res = hmac.compare_digest(server_digest, client_digest)
-            logger.info('Проверяем random_str= {0}'.format(random_str))
-            logger.info('self.database.get_hash(command[sender])= {0}'.format(self.database.get_hash(command['sender'])))
 
             return res
 
         result = {}
-        if (not command['data'] == None) and authorization():
+        if (not command['data'] is None) and authorization():
             # Если авторизация успешна
             # Проверяем, если этот пользователь активен в данный момент, то удаляем его текущуюю сессию
             if command['sender'] in self.names.keys():
@@ -128,11 +118,6 @@ class Server(threading.Thread):
             result['msg'] = 'Unauthorized request'
             result['code'] = 403
             result['data'] = random_str.decode('ascii')
-            #result['data'] = '111'
-            #logger.info('Проверяем random_str= {0}'.format(random_str))
-            #logger.info('Проверяем random_str= {0}'.format(random_str.decode('ascii')))
-            #logger.info('Проверяем result[data]= {0}'.format(result['data']))
-
 
             # Отправляем результат операции отправителю
             self.sending_responde(client, result)
@@ -274,7 +259,6 @@ class Server(threading.Thread):
 
             return
 
-
     def sending_responde(self, client, command):
         def myconverter(obj):
             if isinstance(obj, datetime):
@@ -292,20 +276,14 @@ class Server(threading.Thread):
     def sending_message_brodcaste(self, client, result):
         logger.info(
             'Возвращаем клиенту {0} msg: {1}; code: {2}'.format(client.getpeername(), result['msg'], result['code']))
-        # print('Возвращаем клиенту {0} msg: {1}; code: {2}'.format(client.getpeername(), result['msg'], result['code']))
         msg_send = json.dumps(result)
         for cli in self.clients:
             cli.send(msg_send.encode('utf-8'))
-        # client.close()
 
     def sending_message_unicast(self, client, result):
-        # logger.info(
-        #    'Возвращаем клиенту {0} msg: {1}; code: {2}'.format(client.getpeername(), result['msg'], result['code']))
-        # print('Возвращаем клиенту {0} msg: {1}; code: {2}'.format(client.getpeername(), result['msg'], result['code']))
         msg_send = json.dumps(result)
         for cli in self.clients:
             cli.send(msg_send.encode('utf-8'))
-        # client.close()
 
     def read_requests(self, r_clients):
         """ Чтение запросов из списка клиентов
@@ -319,7 +297,6 @@ class Server(threading.Thread):
                 print('Клиент {} {} отключился'.format(sock.fileno(), sock.getpeername()))
                 logger.info('Клиент {} {} отключился'.format(sock.fileno(), sock.getpeername()))
                 self.remove_client(sock)
-                #self.clients.remove(sock)
 
     def queue_processing(self):
         """ Обрабатываем очередь запросов
@@ -333,10 +310,10 @@ class Server(threading.Thread):
             self.request_queue.pop(request, None)
 
     def remove_client(self, client):
-        '''
+        """
         Метод обработчик клиента с которым прервана связь.
         Ищет клиента и удаляет его из списков и базы:
-        '''
+        """
         logger.info(f'Клиент {client.getpeername()} отключился от сервера.')
         for name in self.names:
             if self.names[name] == client:
@@ -431,7 +408,7 @@ def main():
     server.start()
 
     # работем через консоль
-    #server.console_select_input()
+    # server.console_select_input()
 
     # Работаем через GUI
     server_app = QApplication(sys.argv)
@@ -442,19 +419,11 @@ def main():
 
 try:
     # Инициализируем логирование
-    #logger = logging.getLogger('app.server')
     logger.info('Программа сервер запущена')
 
     if __name__ == '__main__':
         main()
 
-
-#    parser = create_parser()
-#    namespace = parser.parse_args(sys.argv[1:])
-#    addr = namespace.addr  # 'localhost'
-#    port = int(namespace.port)
-#    request_queue = {}
-#    clients = []
 
 except Exception as err:
     if logger:

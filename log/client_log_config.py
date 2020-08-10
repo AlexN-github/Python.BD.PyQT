@@ -12,6 +12,7 @@ formatter = logging.Formatter('%(asctime)s %(levelname)s %(module)s %(message)s'
 fh = logging.FileHandler('log/client.log', encoding='utf-8')
 fh.setLevel(logging.DEBUG)
 fh.setFormatter(formatter)
+#fh.streem.write_through = True
 
 # Добавляем в логгер новый обработчик событий и устанавливаем уровень логирования
 logger.addHandler(fh)

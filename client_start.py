@@ -1,25 +1,18 @@
-# Программа клиента, запрашивающего текущее время
-# Программа клиента, запрашивающего текущее время
+# Программа клиента
 import binascii
 import hashlib
 import hmac
 from datetime import datetime
-
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QApplication
-
-#import client_log_config #log.
 import argparse
 import json
 from socket import *
 import sys
 import time
-
-#from ./client/client_mainForm import MainForm
-from client_.client_mainForm import MainForm
+from client.client_mainForm import MainForm
 from common.variables import *
 import logging
-
 from log.client_log_config import logger
 
 
@@ -32,10 +25,9 @@ def create_parser():
 
 
 # Основной класс клиента
-class Client(QtCore.QThread): #threading.Thread
-    # Создаем сигналs прихода нового сообщения
+class Client(QtCore.QThread):
+    # Создаем сигнал прихода нового сообщения
     message_receive = QtCore.pyqtSignal(object, object)
-    #unauthorized_access = QtCore.pyqtSignal()
 
     def __init__(self, listen_address, listen_port, client_name):
 
@@ -45,6 +37,7 @@ class Client(QtCore.QThread): #threading.Thread
 
         # Имя клиента
         self.account_name = client_name
+        # Пароль для тестирования
         self.password = '123456'
 
         # Прием сообщений в фоне
@@ -60,14 +53,14 @@ class Client(QtCore.QThread): #threading.Thread
         global ext_output
         ext_output = f
 
-    def set_external_output_ReceiveMessage(self,f):
+    def set_external_output_ReceiveMessage(self, f):
         global output_ReceiveMessage
         output_ReceiveMessage = f
 
     def execute_command_presence(self):
         def get_client_digest():
             # Запускаем процедуру авторизации
-            if self.random_str == None:
+            if self.random_str is None:
                 return None
             # Получаем хэш пароля
             passwd_bytes = self.password.encode('utf-8')
@@ -77,8 +70,8 @@ class Client(QtCore.QThread): #threading.Thread
             hash = hmac.new(passwd_hash_string, self.random_str.encode('utf-8'), 'MD5')
             digest = hash.digest()
             client_digest = binascii.b2a_base64(digest).decode('ascii')
-            logger.info('random_str= {0}'.format(self.random_str))
-            logger.info('passwd_hash_string= {0}'.format(passwd_hash_string))
+            # logger.debug('random_str= {0}'.format(self.random_str))
+            # logger.degub('passwd_hash_string= {0}'.format(passwd_hash_string))
 
             return client_digest
 
@@ -106,7 +99,6 @@ class Client(QtCore.QThread): #threading.Thread
         }
         result = self.execute_command(command)
         logger.debug(result)
-        #print(result['contact_list'])
         return result['contact_list']
 
     def execute_command_get_allUsers(self):
@@ -120,7 +112,6 @@ class Client(QtCore.QThread): #threading.Thread
             'sender': self.account_name
         }
         result = self.execute_command(command)
-        #print(result['contact_list'])
         return result['allUsers_list']
 
     def execute_command_add_contact(self, username):
@@ -133,7 +124,6 @@ class Client(QtCore.QThread): #threading.Thread
             'user': username
         }
         result = self.execute_command(command)
-        #print(result['contact_list'])
         return result
 
     def execute_command_del_contact(self, username):
@@ -147,7 +137,6 @@ class Client(QtCore.QThread): #threading.Thread
             'user': username
         }
         result = self.execute_command(command)
-        #print(result['contact_list'])
         return result
 
     def execute_command_send_message(self, username, message):
@@ -179,7 +168,6 @@ class Client(QtCore.QThread): #threading.Thread
 
         return result
 
-
     def receive_messages(self):
         def parsing_recv(msg):
             respond = json.loads(msg)
@@ -197,13 +185,9 @@ class Client(QtCore.QThread): #threading.Thread
             logger.info(message)
             ext_output(message)
 
-        #print(result)
-        #print('Сообщение от сервера: {0}; Code: {1}'.format(result['msg'], result['code']))
         return result
 
-
     def connect_to_server(self):
-        #global sock
         message = 'Устанавливаем соединение: {0}'.format((self.addr, self.port))
         logger.info(message)
         ext_output(message)
@@ -231,7 +215,6 @@ class Client(QtCore.QThread): #threading.Thread
 
         return
 
-
     def disconnect_from_server(self):
         message = 'Отключаемся от сервера {0}'.format((self.addr, self.port))
         logger.info(message)
@@ -239,21 +222,19 @@ class Client(QtCore.QThread): #threading.Thread
         # print('Отключаемся от сервера', (addr, port))
         self.sock.close()
 
-
     def execute_command(self, msg):
         def parsing_recv(msg):
             respond = json.loads(msg)
             return respond
 
         msg_send = json.dumps(msg)
-        #print(msg_send)
         result = {}
         try:
             self.pause_background_receive(False)
             time.sleep(0.3)
             self.sock.send(msg_send.encode('utf-8'))
             # print(result)
-            # Даем время на ответ серверу 10сек, иначе таймаут
+            # Даем время на ответ серверу 30сек, иначе таймаут
             start_time = datetime.now()
             timeout_sec = 30
             while True:
@@ -271,24 +252,15 @@ class Client(QtCore.QThread): #threading.Thread
         if result['code'] == 403:
             # если пришел ответ от сервера 403, то выполняем авторизацию
             logger.critical(f'Запрос неавторизован.')
-            if not msg['data'] == None:
+            if not msg['data'] is None:
                 logging.critical('Запрос авторизации не выполнен. Неверное имя пользователя или пароль')
-                #self.unauthorized_access.emit()
                 return result
-                #raise ServerError('Запрос неавторизован')
+                # raise ServerError('Запрос неавторизован')
 
             self.random_str = result['data']
             result = self.execute_command_presence()
-            #print(result)
             pass
 
-        # logger.info('Ожидание закончилось, получили result= {}'.format(result))
-
-        #data = sock.recv(block_transfer_size)
-        #msg_recv = data.decode('utf-8')
-        #result = parsing_recv(msg_recv)
-        #logger.info('Сообщение от сервера: {0}; Code: {1}'.format(result['msg'], result['code']))
-        # print('Сообщение от сервера: {0}; Code: {1}'.format(result['msg'], result['code']))
         return result
 
     def pause_background_receive(self, pause):
@@ -296,10 +268,10 @@ class Client(QtCore.QThread): #threading.Thread
 
     def run(self):
         try:
-            #self.background_receive = False
+            # self.background_receive = False
             while True:
                 if self.background_receive:
-                    #logger.info('читаем из бек ресив')
+                    # logger.info('читаем из бек ресив')
                     try:
                         res = self.receive_messages()
                         print(res)
@@ -310,11 +282,11 @@ class Client(QtCore.QThread): #threading.Thread
 
                     except OSError as e:
                         pass  # timeout вышел
-                    #print('background_receive=', self.background_receive)
+                    # print('background_receive=', self.background_receive)
                 else:
-                    #print('background_receive=', self.background_receive)
-                    #logger.info('Ставим на паузу бэк ресив')
-                    #time.sleep(1)
+                    # print('background_receive=', self.background_receive)
+                    # logger.info('Ставим на паузу бэк ресив')
+                    # time.sleep(1)
                     pass
 
             # disconnect_from_server()
@@ -378,18 +350,8 @@ def main():
     server_app.exec_()
 
 
-
-#parser = create_parser()
-#namespace = parser.parse_args(sys.argv[1:])
-#client_name = namespace.name
-#print(client_name)
-#addr = namespace.addr  # 'localhost'
-#port = int(namespace.port)
-#account_name = 'Alex'
-
 try:
     # Инициализируем логирование
-#    logger = logging.getLogger('app.client')
     message = 'Программа клиент запущена'
     logger.info(message)
 

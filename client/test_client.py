@@ -1,5 +1,5 @@
 import unittest
-from client import *
+from client_start import *
 
 # Модульные тесты
 class TestSplitFunction(unittest.TestCase):
@@ -15,14 +15,14 @@ class TestSplitFunction(unittest.TestCase):
         port = int(namespace.port)
         account_name = 'Alex'
 
-        connect_to_server(addr=addr, port=port)
+        #connect_to_server(addr=addr, port=port)
 
     @classmethod
     def tearDownClass(cls):
-        disconnect_from_server()
+        # disconnect_from_server()
 
     def test_function_presence(self):
-        r = execute_command_presence()
+        #r = execute_command_presence()
         self.assertEqual(r['code'], 200)
 
 if __name__ == '__main__':

@@ -1,11 +1,13 @@
+import os
+
 from PyQt5 import uic
 import sys
 
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtWidgets import qApp, QMainWindow, QApplication
 
-from server_adduserDialog import adduserDialog
-from server_database import ServerStorage
+from server.server_adduserDialog import adduserDialog
+from server.server_database import ServerStorage
 
 
 # Класс основного окна
@@ -18,7 +20,7 @@ class MainForm(QMainWindow):
         self.initUI()
 
     def initUI(self):
-        uic.loadUi('server_mainForm.ui', self)
+        uic.loadUi(os.path.join(os.path.dirname(__file__), 'server_mainForm.ui'), self)
         # Определяем обработчики для событий
         self.actionRefresh.triggered.connect(self.actionRefresh_triggered)
         self.actionExit.triggered.connect(qApp.quit)
@@ -32,9 +34,6 @@ class MainForm(QMainWindow):
         self.refresh_mainForm()
 
         self.show()
-
-
-
 
     def actionRefresh_triggered(self):
         self.refresh_mainForm()

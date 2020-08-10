@@ -1,5 +1,5 @@
+import os
 import sys
-
 from PyQt5 import uic
 from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow, QPushButton
 
@@ -11,7 +11,7 @@ class connectsettingsDialog(QDialog):
         self.initUI()
 
     def initUI(self):
-        uic.loadUi('client_connectsettingsDialog.ui', self)
+        uic.loadUi(os.path.join(os.path.dirname(__file__), 'client_connectsettingsDialog.ui'), self)
 
         # Определяем обработчики для событий
         self.buttonBox.accepted.connect(self.accept)
@@ -20,6 +20,7 @@ class connectsettingsDialog(QDialog):
 
     def testconnect(self):
         import socket
+
         def isOpen(ip, port):
             return
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

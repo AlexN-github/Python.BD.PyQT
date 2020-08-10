@@ -1,4 +1,3 @@
-#import datetime
 import os
 import sys
 from datetime import datetime
@@ -11,7 +10,6 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QHBoxLayout, QTe
 from client.client_AuthDialog import AuthDialog
 from client.client_usersSelectDialog import usersSelectDialog
 from client.client_connectsettingsDialog import connectsettingsDialog
-from common.utils import get_current_fullpath
 
 
 class MainForm(QMainWindow):
@@ -20,11 +18,9 @@ class MainForm(QMainWindow):
         # Инициализация базы данных
         self.client = client
         self.client.set_external_output_logMessage(self.write_footerLog_textEdit) # (lambda: print('123'))
-        #self.client.set_external_output_ReceiveMessage(self.write_ReceiveMessage_textEdit) # (lambda: print('123'))
 
         #Подписываемся на события CLIENT
         self.client.message_receive.connect(self.write_ReceiveMessage_textEdit)
-        #self.client.unauthorized_access.connect(self.auth)
 
         # Инициализируем форму
         self.initUI()
@@ -40,11 +36,10 @@ class MainForm(QMainWindow):
             if res['code'] == 403:
                 self.auth()
 
-        #Прописываем заголовок окна
+        # Прописываем заголовок окна
         self.setWindowTitle('{0} - {1}'.format(self.windowTitle(), self.client.account_name))
 
         # Создаем подчиненные формы
-        #self.usersSelectDialog = usersSelectDialog(self)
         self.usersSelectDialog = usersSelectDialog(self)
         self.connectsettingsDialog = connectsettingsDialog(self)
 
@@ -98,12 +93,12 @@ class MainForm(QMainWindow):
                 return None
 
         lu = self.client.execute_command_get_allUsers()
-        #lu = [
+        # lu = [
         #    ('test1', datetime(2020, 8, 5, 12, 1, 35, 603531)),
         #    ('test2', datetime(2020, 8, 5, 12, 2, 35, 603531)),
         #    ('test3', datetime(2020, 8, 5, 12, 3, 35, 603531)),
         #    ('test4', datetime(2020, 8, 5, 12, 4, 35, 603531)),
-        #]
+        # ]
         new_contact = select_new_contact(lu)
         if new_contact:
             # Добавляем в список формы
@@ -136,10 +131,6 @@ class MainForm(QMainWindow):
 
         remove_select_contact()
 
-
-
-        print('Hello')
-
     def sendmessage_pushButton_clicked(self):
         if not self.correspondence_tabWidget.currentWidget():
             QMessageBox.question(self, 'Сообщение',
@@ -149,7 +140,6 @@ class MainForm(QMainWindow):
         sendmessage = self.sendmessage_textEdit.toPlainText()
         current_contact_tab = self.correspondence_tabWidget.currentWidget().objectName().replace('_tab', '')
         self.client.execute_command_send_message(current_contact_tab, sendmessage)
-        #print(current_contact_tab)
         editText = self.findChild(QObject, '{0}_textEdit'.format(current_contact_tab))
 
         message = 'Исходящее сообщение {0}\n{1}'.format(datetime.now().strftime('%d-%m-%y %H:%M:%S'), sendmessage)
@@ -170,7 +160,6 @@ class MainForm(QMainWindow):
             name_widget = '{0}_textEdit'.format(contact)
             text_edit.setObjectName(name_widget)
             text_edit.setReadOnly(True)
-            #print(self.findChild(QObject, 'contact3_textEdit'))
             hbox = QHBoxLayout()
             hbox.addWidget(text_edit)
             new_tab.setLayout(hbox)
@@ -180,15 +169,8 @@ class MainForm(QMainWindow):
         selected_contact = self.contactlist_listWidget.currentItem().text()
         self.__insert_new_tab(selected_contact)
 
-        #print('Hello')
-
     def fill_contactlist_listWidget(self):
         list_contact = self.client.execute_command_get_contacts()
-        #print('Hello')
-        #list_contact = ['contact1', 'contact2', 'contact3']
-        # print(database.users_list()[0])
-        #for user in sorted(self.server.database.users_list()):
-        #    list.append(user[0])
         self.contactlist_listWidget.clear()
         self.contactlist_listWidget.addItems(list_contact)
         self.contactlist_listWidget.setCurrentRow(0)

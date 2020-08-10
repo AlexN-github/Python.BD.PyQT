@@ -57,10 +57,8 @@ class ServerStorage:
         # echo=False - отключаем ведение лога (вывод sql-запросов)
         # pool_recycle - По умолчанию соединение с БД через 8 часов простоя обрывается.
         # Чтобы это не случилось нужно добавить опцию pool_recycle = 7200 (переуст-ка соед-я через 2 часа)
-        #self.database_engine = create_engine(SERVER_DATABASE, echo=False, pool_recycle=7200)
         self.database_engine = create_engine(server_database, echo=False, pool_recycle=7200,
                                              connect_args={'check_same_thread': False})
-
 
         # Создаём объект MetaData
         self.metadata = MetaData()
@@ -107,7 +105,6 @@ class ServerStorage:
                                     Column('accepted', Integer)
                                     )
 
-
         # Создаём таблицы
         self.metadata.create_all(self.database_engine)
 
@@ -129,43 +126,11 @@ class ServerStorage:
         self.session.commit()
 
     # Функция выполняющяяся при входе пользователя, записывает в базу факт входа
-    #def user_login(self, username, ip_address, port):
-    #    print(username, ip_address, port)
-    #    # Запрос в таблицу пользователей на наличие там пользователя с таким именем
-    #    rez = self.session.query(self.AllUsers).filter_by(name=username)
-    #    #print(type(rez))
-    #    # Если имя пользователя уже присутствует в таблице, обновляем время последнего входа
-    #    if rez.count():
-    #        user = rez.first()
-    #        user.last_login = datetime.datetime.now()
-    #    # Если нет, то создаздаём нового пользователя
-    #    else:
-    #        # Создаем экземпляр класса self.AllUsers, через который передаем данные в таблицу
-    #        user = self.AllUsers(username)
-    #        self.session.add(user)
-    #        # Комит здесь нужен, чтобы присвоился ID
-    #        self.session.commit()
-    #        user_in_history = self.UsersHistory(user.id)
-    #        self.session.add(user_in_history)
-    #
-    #    # Теперь можно создать запись в таблицу активных пользователей о факте входа.
-    #    # Создаем экземпляр класса self.ActiveUsers, через который передаем данные в таблицу
-    #    new_active_user = self.ActiveUsers(user.id, ip_address, port, datetime.datetime.now())
-    #    self.session.add(new_active_user)#
-    #
-    #    # и сохранить в историю входов
-    #    # Создаем экземпляр класса self.LoginHistory, через который передаем данные в таблицу
-    #    history = self.LoginHistory(user.id, datetime.datetime.now(), ip_address, port)
-    #    self.session.add(history)
-    #
-    #    # Сохраняем изменения
-    #    self.session.commit()
-
     def user_login(self, username, ip_address, port, key):
-        '''
+        """
         Метод выполняющийся при входе пользователя, записывает в базу факт входа
         Обновляет открытый ключ пользователя при его изменении.
-        '''
+        """
         # Запрос в таблицу пользователей на наличие там пользователя с таким
         # именем
         rez = self.session.query(self.AllUsers).filter_by(name=username)
@@ -209,7 +174,7 @@ class ServerStorage:
         self.session.commit()
 
     def remove_user(self, name):
-        '''Метод удаляющий пользователя из базы.'''
+        """Метод удаляющий пользователя из базы."""
         user = self.session.query(self.AllUsers).filter_by(name=name).first()
         self.session.query(self.ActiveUsers).filter_by(user=user.id).delete()
         self.session.query(self.LoginHistory).filter_by(name=user.id).delete()
@@ -222,17 +187,17 @@ class ServerStorage:
         self.session.commit()
 
     def get_hash(self, name):
-        '''Метод получения хэша пароля пользователя.'''
+        """Метод получения хэша пароля пользователя."""
         user = self.session.query(self.AllUsers).filter_by(name=name).first()
         return user.passwd_hash
 
     def get_pubkey(self, name):
-        '''Метод получения публичного ключа пользователя.'''
+        """Метод получения публичного ключа пользователя."""
         user = self.session.query(self.AllUsers).filter_by(name=name).first()
         return user.pubkey
 
     def check_user(self, name):
-        '''Метод проверяющий существование пользователя.'''
+        """Метод проверяющий существование пользователя."""
         if self.session.query(self.AllUsers).filter_by(name=name).count():
             return True
         else:
@@ -367,6 +332,8 @@ class ServerStorage:
         ).join(self.AllUsers)
         # Возвращаем список кортежей
         return query.all()
+
+
 # Отладка
 if __name__ == '__main__':
     test_db = ServerStorage()

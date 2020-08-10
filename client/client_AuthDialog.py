@@ -1,5 +1,5 @@
+import os
 import sys
-
 from PyQt5 import uic
 from PyQt5.QtWidgets import QDialog, QApplication, QPushButton, QMainWindow
 
@@ -11,12 +11,11 @@ class AuthDialog(QDialog):
         self.initUI()
 
     def initUI(self):
-        uic.loadUi('client_AuthDialog.ui', self)
+        uic.loadUi(os.path.join(os.path.dirname(__file__), 'client_AuthDialog.ui'), self)
 
         # Определяем обработчики для событий
         self.buttonBox.accepted.connect(self.accept)
         self.buttonBox.rejected.connect(self.reject)
-
 
 
 if __name__ == '__main__':
@@ -33,8 +32,6 @@ if __name__ == '__main__':
 
         def openDialog(self):
             self.AuthDialog.show()
-
-
 
     server_app = QApplication(sys.argv)
     mf = TestMainWindow()
