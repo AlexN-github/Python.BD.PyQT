@@ -4417,3 +4417,77 @@
 2020-08-10 13:20:28,519 INFO server_start Принята команда: send_message
 2020-08-10 13:20:28,519 INFO server_start Отправляем клиенту test2 msg: rty
 2020-08-10 13:20:28,534 INFO server_start Возвращаем клиенту ('127.0.0.1', 60112) msg: command `send_message` completed successfully; code: 200
+2020-08-10 13:24:57,051 INFO server_start Программа сервер запущена
+2020-08-10 13:24:57,098 INFO server_start Слушаем запросы от клиентов: ('', 7777)
+2020-08-10 13:24:57,910 INFO server_start Получен запрос на соединение от ('127.0.0.1', 60136)
+2020-08-10 13:24:57,910 INFO server_start Получен запрос на соединение от ('127.0.0.1', 60137)
+2020-08-10 13:24:57,910 INFO server_start Получен запрос на соединение от ('127.0.0.1', 60138)
+2020-08-10 13:24:58,113 DEBUG server_start Принято сообщение: {"action": "presence", "time": 1597055097, "type": "status", "sender": "test2", "data": null}, от клиента: 
+2020-08-10 13:24:58,113 INFO server_start Принята команда: presence
+2020-08-10 13:24:58,113 INFO server_start Возвращаем клиенту ('127.0.0.1', 60136) msg: Unauthorized request; code: 403
+2020-08-10 13:24:58,113 DEBUG server_start Принято сообщение: {'action': 'presence', 'time': 1597055097, 'type': 'status', 'sender': 'test2', 'data': None}, от клиента: 
+2020-08-10 13:24:58,113 INFO server_start Принята неавторизованная команда: presence
+2020-08-10 13:24:58,113 INFO server_start Клиенту отправлен код 403, Код для авторизации= 06b2a0c515b6bec8a7d15b63cd68da9eb33e3e9ca6c423770bd6a8d77020a7ff3596b4fc540d700439b7eb7335060a40545943f0a5668669c3bdcc1a8f25bb79
+2020-08-10 13:24:58,113 DEBUG server_start Принято сообщение: {"action": "presence", "time": 1597055097, "type": "status", "sender": "test3", "data": null}, от клиента: 
+2020-08-10 13:24:58,113 INFO server_start Принята команда: presence
+2020-08-10 13:24:58,113 INFO server_start Возвращаем клиенту ('127.0.0.1', 60137) msg: Unauthorized request; code: 403
+2020-08-10 13:24:58,113 DEBUG server_start Принято сообщение: {'action': 'presence', 'time': 1597055097, 'type': 'status', 'sender': 'test3', 'data': None}, от клиента: 
+2020-08-10 13:24:58,113 INFO server_start Принята неавторизованная команда: presence
+2020-08-10 13:24:58,113 INFO server_start Клиенту отправлен код 403, Код для авторизации= 6bca9ac0d2c01393157ead138b1b06e6549f1f5209f49051c4b9c8f07a169bc96fea17ec440b9be13020d347e1ad670829f5640f3b608df5815235477988a040
+2020-08-10 13:24:58,316 DEBUG server_start Принято сообщение: {"action": "presence", "time": 1597055097, "type": "status", "sender": "test1", "data": null}, от клиента: 
+2020-08-10 13:24:58,316 INFO server_start Принята команда: presence
+2020-08-10 13:24:58,316 INFO server_start Возвращаем клиенту ('127.0.0.1', 60138) msg: Unauthorized request; code: 403
+2020-08-10 13:24:58,316 DEBUG server_start Принято сообщение: {'action': 'presence', 'time': 1597055097, 'type': 'status', 'sender': 'test1', 'data': None}, от клиента: 
+2020-08-10 13:24:58,316 INFO server_start Принята неавторизованная команда: presence
+2020-08-10 13:24:58,316 INFO server_start Клиенту отправлен код 403, Код для авторизации= af3a20d622594748b9575903af1745823ef3264b4c27985714ee05bd2c634e607e027a3d973f83c8ea1f1406b8232a61dd9b9ab61b4707d664008afa4b1b84ca
+2020-08-10 13:24:58,519 DEBUG server_start Принято сообщение: {"action": "presence", "time": 1597055098, "type": "status", "sender": "test3", "data": "LvOv6Jv1LB/ARXiaH2YBEw==\n"}, от клиента: 
+2020-08-10 13:24:58,519 INFO server_start Принята команда: presence
+2020-08-10 13:24:58,551 INFO server_start Возвращаем клиенту ('127.0.0.1', 60137) msg: command `presence` completed successfully; code: 200
+2020-08-10 13:24:58,754 DEBUG server_start Принято сообщение: {"action": "presence", "time": 1597055098, "type": "status", "sender": "test2", "data": "MEK2ND0u+oDaIsYnsyD7tQ==\n"}, от клиента: 
+2020-08-10 13:24:58,754 INFO server_start Принята команда: presence
+2020-08-10 13:24:58,769 INFO server_start Возвращаем клиенту ('127.0.0.1', 60136) msg: command `presence` completed successfully; code: 200
+2020-08-10 13:24:58,973 DEBUG server_start Принято сообщение: {"action": "get_contacts", "time": 1597055098, "sender": "test3"}, от клиента: 
+2020-08-10 13:24:58,973 INFO server_start Принята команда: get_contacts
+2020-08-10 13:24:58,973 INFO server_start Возвращаем клиенту ('127.0.0.1', 60137) msg: command `get_contacts` completed successfully; code: 200
+2020-08-10 13:24:58,973 DEBUG server_start Принято сообщение: {"action": "presence", "time": 1597055098, "type": "status", "sender": "test1", "data": "cmEtGZybX4YJQ5gbeSRn7A==\n"}, от клиента: 
+2020-08-10 13:24:58,973 INFO server_start Принята команда: presence
+2020-08-10 13:24:59,004 INFO server_start Возвращаем клиенту ('127.0.0.1', 60138) msg: command `presence` completed successfully; code: 200
+2020-08-10 13:24:59,207 DEBUG server_start Принято сообщение: {"action": "get_contacts", "time": 1597055098, "sender": "test2"}, от клиента: 
+2020-08-10 13:24:59,207 INFO server_start Принята команда: get_contacts
+2020-08-10 13:24:59,207 INFO server_start Возвращаем клиенту ('127.0.0.1', 60136) msg: command `get_contacts` completed successfully; code: 200
+2020-08-10 13:24:59,410 DEBUG server_start Принято сообщение: {"action": "get_contacts", "time": 1597055099, "sender": "test1"}, от клиента: 
+2020-08-10 13:24:59,410 INFO server_start Принята команда: get_contacts
+2020-08-10 13:24:59,410 INFO server_start Возвращаем клиенту ('127.0.0.1', 60138) msg: command `get_contacts` completed successfully; code: 200
+2020-08-10 16:42:20,656 INFO server_start Программа сервер запущена
+2020-08-10 16:42:20,703 INFO server_start Слушаем запросы от клиентов: ('', 7777)
+2020-08-10 16:42:26,484 INFO server_start Получен запрос на соединение от ('127.0.0.1', 60400)
+2020-08-10 16:42:26,891 DEBUG server_start Принято сообщение: {"action": "presence", "time": 1597066946, "type": "status", "sender": "", "data": null}, от клиента: 
+2020-08-10 16:42:26,891 INFO server_start Принята команда: presence
+2020-08-10 16:42:26,891 INFO server_start Возвращаем клиенту ('127.0.0.1', 60400) msg: Unauthorized request; code: 403
+2020-08-10 16:42:26,891 DEBUG server_start Принято сообщение: {'action': 'presence', 'time': 1597066946, 'type': 'status', 'sender': '', 'data': None}, от клиента: 
+2020-08-10 16:42:26,891 INFO server_start Принята неавторизованная команда: presence
+2020-08-10 16:42:26,891 INFO server_start Клиенту отправлен код 403, Код для авторизации= 1582b720982d0d991f863dffa40b244f169477d84dbcf1203e78f558c22c8d085908fc000f3d6b0187f6e47b6a72d1d7aeeccbfa7a75e8ff604d2754935f8dba
+2020-08-10 16:42:27,500 DEBUG server_start Принято сообщение: {"action": "presence", "time": 1597066946, "type": "status", "sender": "", "data": "k8DcT533Jq+W8hN8Ks236A==\n"}, от клиента: 
+2020-08-10 16:42:27,500 INFO server_start Принята команда: presence
+2020-08-10 16:42:27,500 INFO server_start Возвращаем клиенту ('127.0.0.1', 60400) msg: Unauthorized request; code: 403
+2020-08-10 16:42:27,500 DEBUG server_start Принято сообщение: {'action': 'presence', 'time': 1597066946, 'type': 'status', 'sender': '', 'data': 'k8DcT533Jq+W8hN8Ks236A==\n'}, от клиента: 
+2020-08-10 16:42:27,500 INFO server_start Принята неавторизованная команда: presence
+2020-08-10 16:42:27,500 INFO server_start Клиенту отправлен код 403, Код для авторизации= 2acbb705eeb6b740568fbbe066da13f1a406198123c16757e5ec9a29dd350613c20b244627cbafd9b7b4fc393700277068d0ac39efb2dea4ebbc6928a3bc9807
+2020-08-10 16:42:49,438 DEBUG server_start Принято сообщение: {"action": "presence", "time": 1597066968, "type": "status", "sender": "test", "data": "2GjVPxvI5oPtXqiPINzvyw==\n"}, от клиента: 
+2020-08-10 16:42:49,438 INFO server_start Принята команда: presence
+2020-08-10 16:42:49,438 INFO server_start Возвращаем клиенту ('127.0.0.1', 60400) msg: Unauthorized request; code: 403
+2020-08-10 16:42:49,438 DEBUG server_start Принято сообщение: {'action': 'presence', 'time': 1597066968, 'type': 'status', 'sender': 'test', 'data': '2GjVPxvI5oPtXqiPINzvyw==\n'}, от клиента: 
+2020-08-10 16:42:49,438 INFO server_start Принята неавторизованная команда: presence
+2020-08-10 16:42:49,438 INFO server_start Клиенту отправлен код 403, Код для авторизации= 7db98f0eb4a1989aa9157ec9d2f45162de649ce87f89a2fcebfe7901815c7d12640566077dceb0d6c768773d725f07275a10f11f5836d2cb5f40c2cec3315cb1
+2020-08-10 16:42:54,313 DEBUG server_start Принято сообщение: {"action": "presence", "time": 1597066973, "type": "status", "sender": "test5", "data": "5HaDLUS040K5gqunJdA7RA==\n"}, от клиента: 
+2020-08-10 16:42:54,313 INFO server_start Принята команда: presence
+2020-08-10 16:42:54,313 INFO server_start Возвращаем клиенту ('127.0.0.1', 60400) msg: Unauthorized request; code: 403
+2020-08-10 16:42:54,313 DEBUG server_start Принято сообщение: {'action': 'presence', 'time': 1597066973, 'type': 'status', 'sender': 'test5', 'data': '5HaDLUS040K5gqunJdA7RA==\n'}, от клиента: 
+2020-08-10 16:42:54,313 INFO server_start Принята неавторизованная команда: presence
+2020-08-10 16:42:54,313 INFO server_start Клиенту отправлен код 403, Код для авторизации= 9e4d98c7e59f3a8c529537b099a956229f1ca56f8f88d6aed12427ccf21c44922720f4f455a3d5728e688eeb63a7d3e8d59438b1bc609183ebb021763105296f
+2020-08-10 16:42:59,391 DEBUG server_start Принято сообщение: {"action": "presence", "time": 1597066978, "type": "status", "sender": "test5", "data": "Bo2KOc1u68d7o1MwJE2/ng==\n"}, от клиента: 
+2020-08-10 16:42:59,391 INFO server_start Принята команда: presence
+2020-08-10 16:42:59,406 INFO server_start Возвращаем клиенту ('127.0.0.1', 60400) msg: command `presence` completed successfully; code: 200
+2020-08-10 16:42:59,813 DEBUG server_start Принято сообщение: {"action": "get_contacts", "time": 1597066979, "sender": "test5"}, от клиента: 
+2020-08-10 16:42:59,813 INFO server_start Принята команда: get_contacts
+2020-08-10 16:42:59,813 INFO server_start Возвращаем клиенту ('127.0.0.1', 60400) msg: command `get_contacts` completed successfully; code: 200

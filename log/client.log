@@ -7701,3 +7701,56 @@
 2020-08-10 13:20:28,128 INFO client_start Выполняем команду: `send_message`
 2020-08-10 13:20:28,519 INFO client_start Принято сообщение от клиента test3 msg: rty
 2020-08-10 13:20:28,550 INFO client_start Сообщение от сервера: command `send_message` completed successfully; Code: 200
+2020-08-10 13:24:56,738 INFO client_start Программа клиент запущена
+2020-08-10 13:24:56,785 INFO client_start Программа клиент запущена
+2020-08-10 13:24:56,801 INFO client_start Программа клиент запущена
+2020-08-10 13:24:57,644 INFO client_start Устанавливаем соединение: ('localhost', 7777)
+2020-08-10 13:24:57,660 INFO client_start Подключение к серверу успешно
+2020-08-10 13:24:57,676 INFO client_start Выполняем команду: `presence`
+2020-08-10 13:24:57,723 INFO client_start Устанавливаем соединение: ('localhost', 7777)
+2020-08-10 13:24:57,723 INFO client_start Подключение к серверу успешно
+2020-08-10 13:24:57,723 INFO client_start Выполняем команду: `presence`
+2020-08-10 13:24:57,832 INFO client_start Устанавливаем соединение: ('localhost', 7777)
+2020-08-10 13:24:57,848 INFO client_start Подключение к серверу успешно
+2020-08-10 13:24:57,863 INFO client_start Выполняем команду: `presence`
+2020-08-10 13:24:58,129 INFO client_start Сообщение от сервера: Unauthorized request; Code: 403
+2020-08-10 13:24:58,129 INFO client_start Сообщение от сервера: Unauthorized request; Code: 403
+2020-08-10 13:24:58,129 CRITICAL client_start Запрос неавторизован.
+2020-08-10 13:24:58,129 INFO client_start Выполняем команду: `presence`
+2020-08-10 13:24:58,160 CRITICAL client_start Запрос неавторизован.
+2020-08-10 13:24:58,160 INFO client_start Выполняем команду: `presence`
+2020-08-10 13:24:58,332 INFO client_start Сообщение от сервера: Unauthorized request; Code: 403
+2020-08-10 13:24:58,379 CRITICAL client_start Запрос неавторизован.
+2020-08-10 13:24:58,379 INFO client_start Выполняем команду: `presence`
+2020-08-10 13:24:58,566 INFO client_start Сообщение от сервера: command `presence` completed successfully; Code: 200
+2020-08-10 13:24:58,598 INFO client_start Выполняем команду: `get_contacts`
+2020-08-10 13:24:58,785 INFO client_start Сообщение от сервера: command `presence` completed successfully; Code: 200
+2020-08-10 13:24:58,832 INFO client_start Выполняем команду: `get_contacts`
+2020-08-10 13:24:58,988 INFO client_start Сообщение от сервера: command `get_contacts` completed successfully; Code: 200
+2020-08-10 13:24:59,004 DEBUG client_start {'msg': 'command `get_contacts` completed successfully', 'contact_list': ['test1', 'test2'], 'code': 200}
+2020-08-10 13:24:59,019 INFO client_start Сообщение от сервера: command `presence` completed successfully; Code: 200
+2020-08-10 13:24:59,051 INFO client_start Выполняем команду: `get_contacts`
+2020-08-10 13:24:59,223 INFO client_start Сообщение от сервера: command `get_contacts` completed successfully; Code: 200
+2020-08-10 13:24:59,269 DEBUG client_start {'msg': 'command `get_contacts` completed successfully', 'contact_list': ['test1', 'test3'], 'code': 200}
+2020-08-10 13:24:59,426 INFO client_start Сообщение от сервера: command `get_contacts` completed successfully; Code: 200
+2020-08-10 13:24:59,473 DEBUG client_start {'msg': 'command `get_contacts` completed successfully', 'contact_list': ['test2', 'test3', 'test4'], 'code': 200}
+2020-08-10 16:42:26,141 INFO client_start Программа клиент запущена
+2020-08-10 16:42:26,469 INFO client_start Устанавливаем соединение: ('localhost', 7777)
+2020-08-10 16:42:26,484 INFO client_start Подключение к серверу успешно
+2020-08-10 16:42:26,484 INFO client_start Выполняем команду: `presence`
+2020-08-10 16:42:26,906 INFO client_start Сообщение от сервера: Unauthorized request; Code: 403
+2020-08-10 16:42:26,922 CRITICAL client_start Запрос неавторизован.
+2020-08-10 16:42:26,922 INFO client_start Выполняем команду: `presence`
+2020-08-10 16:42:27,516 INFO client_start Сообщение от сервера: Unauthorized request; Code: 403
+2020-08-10 16:42:27,531 CRITICAL client_start Запрос неавторизован.
+2020-08-10 16:42:48,875 INFO client_start Выполняем команду: `presence`
+2020-08-10 16:42:49,453 INFO client_start Сообщение от сервера: Unauthorized request; Code: 403
+2020-08-10 16:42:49,469 CRITICAL client_start Запрос неавторизован.
+2020-08-10 16:42:53,906 INFO client_start Выполняем команду: `presence`
+2020-08-10 16:42:54,328 INFO client_start Сообщение от сервера: Unauthorized request; Code: 403
+2020-08-10 16:42:54,344 CRITICAL client_start Запрос неавторизован.
+2020-08-10 16:42:58,891 INFO client_start Выполняем команду: `presence`
+2020-08-10 16:42:59,422 INFO client_start Сообщение от сервера: command `presence` completed successfully; Code: 200
+2020-08-10 16:42:59,438 INFO client_start Выполняем команду: `get_contacts`
+2020-08-10 16:42:59,828 INFO client_start Сообщение от сервера: command `get_contacts` completed successfully; Code: 200
+2020-08-10 16:42:59,844 DEBUG client_start {'msg': 'command `get_contacts` completed successfully', 'contact_list': ['test3'], 'code': 200}
